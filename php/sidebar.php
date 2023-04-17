@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
-<title></title>
-<style>
-  #client{
-    background-color: #fff;
-    color: black;
-  }
-  .sidebar li a .links_name,
-.sidebar li a i{
-    color: black;
-  }
- 
-</style>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
-
+    <title>Document</title>
 </head>
 <body>
-       <!-- <div class="container" >
+<div class="container" >
             <div class="row" >
                 <div class="col-lg-12 mx-auto" >
                     <div class="page-header clearfix">
@@ -39,7 +22,7 @@
     </div>
     <ul class="nav-list">
       <li>
-       <a href="" style="background-color: rgb(60, 179, 113);">
+       <a href="" id="client" >
          <i class='bx bx-user' ></i>
          <span class="links_name">Client</span>
        </a>
@@ -82,7 +65,7 @@
      </li>
      <li class="profile">
          <div class="profile-details">
-           .....<img src="profile.jpg" alt="profileImg">
+           <!--<img src="profile.jpg" alt="profileImg">-->
            <div class="name_job">
              <div class="name">abdessamad - Mohammed</div>
              <div class="job">Admin</div>
@@ -91,8 +74,7 @@
          <a href="../log-in.html"><i class='bx bx-log-out' id="log_out" ></i></a>
      </li>
     </ul>
-  </div>-->
-  <?php include 'sidebar.php';?>
+  </div>
   <script>
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
@@ -117,45 +99,5 @@
    }
   }
   </script>
-   <section class="home-section">
-                      
-                        
-                        <form method="post">
-                        <div class="contentbutton">
-                            
-                          <div class="add" style="width: 50%;">
-                          <a href="add_index.php" class="btn btn-success pull-right">Add New Client</a>
-      </div>
-      <div class="search" style="width: 50%;">
-      <input type="text" class="input" name="search" placeholder="Search Client">
-      <button type="submit" name="submit-s" class="button-3">Search</button>
-      </div>
-      </div>
-      </form>
-      
-      
-      </section>        
-      <section class="home-section"> 
-      <div class="grid">
-        <div class="card1">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
-        <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
-          <div class="text">Activité enregistré</div>
-        </div>
-        <div class="card2">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
-          <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
-          <div class="text">Activité enregistré</div>
-        </div>
-        <div class="card3">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
-        <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
-          <div class="text">Activité enregistré</div>
-        </div>
-    </div>
-    </section> 
 </body>
 </html>
