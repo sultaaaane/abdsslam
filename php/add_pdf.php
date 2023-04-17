@@ -1,6 +1,6 @@
 <?php
 require('DB/connect.php');
-if ($_SERVER['POST'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Check if a file was uploaded
   if (isset($_FILES['pdf']) && $_FILES['pdf']['error'] === UPLOAD_ERR_OK) {
     // Read the file contents
