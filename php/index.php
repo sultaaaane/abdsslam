@@ -117,21 +117,21 @@
       </section>          
       <div class="grid">
         <div class="card1">
-        <div class="icone"></div>
-        <div class="title"><img src="../icones/pdfff.png" alt="#"><span>Cours POO</span></div>
-          <div class="img"></div>
+        <div class="icone" style="margin: auto;">
+        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
+        <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
           <div class="text">Activité enregistré</div>
         </div>
         <div class="card2">
-        <div class="icone"></div>
-        <div class="title"><img src="../icones/pdfff.png" alt="#"><span>Cours POO</span></div>
-          <div class="img"></div>
+        <div class="icone" style="margin: auto;">
+        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
+          <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
           <div class="text">Activité enregistré</div>
         </div>
         <div class="card3">
-        <div class="icone"></div>
-          <div class="title"><img src="../icones/pdfff.png" alt="#"><span>Cours POO</span></div>
-          <div class="img"></div>
+        <div class="icone" style="margin: auto;">
+        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
+        <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
           <div class="text">Activité enregistré</div>
         </div>
     </div>
