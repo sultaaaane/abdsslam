@@ -107,7 +107,7 @@
   }
   </script>
    <section class="home-section">
-                        <a href="create.php" class="btn btn-success pull-right">Add New Client</a>
+                        <a href="add_index.php" class="btn btn-success pull-right">Add New Client</a>
                         <form method="post">
                                           <div>
       <input type="text" class="input" name="search" placeholder="Search Client">
