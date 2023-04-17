@@ -7,6 +7,7 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 <title></title>
 
     <script type="text/javascript">
@@ -113,106 +114,18 @@
       <button type="submit" name="submit-s" class="button-3">Search</button>
       </div>
       </form>
-                    </div>
-                   <?php
-                    include_once 'DB/connect.php';
-                    $result = mysqli_query($conn,"SELECT * FROM client");
-                    ?>
-
-                    <?php
-                    if (mysqli_num_rows($result) > 0) {
-                    ?>
-                      <table class='table table-bordered table-striped'>
-                      
-                      <tr>
-                      <td>Id Client</td>
-                        <td>Name</td>
-                        <td>Raison social</td>
-                        <td>Adresse</td>
-                        <td>Ville</td>
-                        <td>Pays</td>
-                        <td>Phone</td>
-                        <td></td>
-                      </tr>
-                    <?php
-                    $i=0;
-                    while($row = mysqli_fetch_array($result)) {
-                    ?>
-                    <tr>
-                    <td><?php echo $row["numClient"]; ?></td>
-                        <td><?php echo $row["nomClient"]; ?></td>
-                        <td><?php echo $row["raisonSocial"]; ?></td>
-                        <td><?php echo $row["adresseClient"]; ?></td>
-                        <td><?php echo $row["villeClient"]; ?></td>
-                        <td><?php echo $row["pays"]; ?></td>
-                        <td><?php echo ($row["telephone"])?($row["telephone"]):('N/A'); ?></td>
-                        <td><a href="update.php?numClient=<?php echo $row["numClient"]; ?>" title='Update Client'><span class='glyphicon glyphicon-pencil'></span></a>
-                        <a href="delete.php?numClient=<?php echo $row["numClient"]; ?>" title='Delete Client'><i class='material-icons'><span class='glyphicon glyphicon-trash'></span></a>
-                        </td>
-                    </tr>
-                    <?php
-                    $i++;
-                    }
-                    ?>
-                    </table>
-
-                     <?php
-                    }
-                    else{
-                        echo "No result found";
-                    }
-                    ?>
-                    <h3>Search Result :</h3>
-                    <?php
-                    include_once 'DB/connect.php';
-                    if (isset($_POST['submit-s'])) {
-                      $search = mysqli_real_escape_string($conn, $_POST['search']);
-                      $sql = "select * from client where numClient like '%$search%' or nomClient like '%$search%' or raisonSocial like '%$search%' or adresseClient like '%$search%' or villeClient like '%$search%' or pays like '%$search%' or telephone like '%$search%'";
-                      $result = mysqli_query($conn, $sql);
-                      $queryResult = mysqli_num_rows($result);
-                    ?>
-                    <?php
-                      if ($queryResult > 0) {
-                    ?>
-                      <table class='table table-bordered table-striped'>
-                      
-                      <tr>
-                      <td>Id Client</td>
-                        <td>Name</td>
-                        <td>Raison social</td>
-                        <td>Adresse</td>
-                        <td>Ville</td>
-                        <td>Pays</td>
-                        <td>Phone</td>
-                
-                      </tr>
-                    <?php
-                        $i = 0;
-                        while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                    <tr>
-                    <td><?php echo $row["numClient"]; ?></td>
-                        <td><?php echo $row["nomClient"]; ?></td>
-                        <td><?php echo $row["raisonSocial"]; ?></td>
-                        <td><?php echo $row["adresseClient"]; ?></td>
-                        <td><?php echo $row["villeClient"]; ?></td>
-                        <td><?php echo $row["pays"]; ?></td>
-                        <td><?php echo ($row["telephone"]) ? ($row["telephone"]) : ('N/A'); ?></td>
-                    </tr>
-                    <?php
-                          $i++;
-                        }
-                    ?>
-                    </table>
-                     <?php
-                      } else {
-                        echo "No result found";
-                      }
-                    }
-                    ?>
-                </div>
-            </div>     
+      </section>          
+      <div class="grid">
+        <div class="card1">
+            hello
         </div>
-  </section>
+        <div class="card2">
+            huxyizus
+        </div>
+        <div class="card3">
+            xzxoz
+        </div>
+    </div>
+
 </body>
 </html>
