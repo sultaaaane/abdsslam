@@ -7,8 +7,9 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link 
 <title></title>
-<?php include "head.php"; ?>
+
     <script type="text/javascript">
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
@@ -115,7 +116,7 @@
       </form>
                     </div>
                    <?php
-                    include_once '../DB/connection.php';
+                    include_once 'DB/connect.php';
                     $result = mysqli_query($conn,"SELECT * FROM client");
                     ?>
 
@@ -164,7 +165,7 @@
                     ?>
                     <h3>Search Result :</h3>
                     <?php
-                    include_once '../DB/connection.php';
+                    include_once 'DB/connect.php';
                     if (isset($_POST['submit-s'])) {
                       $search = mysqli_real_escape_string($conn, $_POST['search']);
                       $sql = "select * from client where numClient like '%$search%' or nomClient like '%$search%' or raisonSocial like '%$search%' or adresseClient like '%$search%' or villeClient like '%$search%' or pays like '%$search%' or telephone like '%$search%'";
