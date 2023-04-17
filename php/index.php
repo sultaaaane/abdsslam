@@ -117,13 +117,22 @@
       </section>          
       <div class="grid">
         <div class="card1">
-            hello
+        <div class="icone"></div>
+        <div class="title"><img src="../icones/pdfff.png" alt="#"><span>Cours POO</span></div>
+          <div class="img"></div>
+          <div class="text">Activité enregistré</div>
         </div>
         <div class="card2">
-            huxyizus
+        <div class="icone"></div>
+        <div class="title"><img src="../icones/pdfff.png" alt="#"><span>Cours POO</span></div>
+          <div class="img"></div>
+          <div class="text">Activité enregistré</div>
         </div>
         <div class="card3">
-            xzxoz
+        <div class="icone"></div>
+          <div class="title"><img src="../icones/pdfff.png" alt="#"><span>Cours POO</span></div>
+          <div class="img"></div>
+          <div class="text">Activité enregistré</div>
         </div>
     </div>
 
