@@ -11,14 +11,19 @@
 <title></title>
 <style>
   #client{
-    background-color: #fff;
-    color: black;
+    background-color: #deefdb;
+ 
   }
   .sidebar li a .links_name,
 .sidebar li a i{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    
+  }
+  .sidebar li a .links_name{
     color: black;
   }
- 
 </style>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -124,7 +129,7 @@
                         <div class="contentbutton">
                             
                           <div class="add" style="width: 50%;">
-                          <a href="add_index.php" class="btn btn-success pull-right">Add New Client</a>
+                          <input type="button" value="addnew"  id="addnew" class="btn btn-success pull-right">
       </div>
       <div class="search" style="width: 50%;">
       <input type="text" class="input" name="search" placeholder="Search Client">
@@ -132,9 +137,8 @@
       </div>
       </div>
       </form>
-      
-      
-      </section>        
+            
+    </section>        
       <section class="home-section"> 
       <div class="grid">
         <div class="card1">
@@ -156,6 +160,64 @@
           <div class="text">Activité enregistré</div>
         </div>
     </div>
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close">&times;</span>
+  <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h2>Create Record</h2>
+                    </div>
+                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <form action="add_pdf.php" method="post">
+                    <div class="form-group">
+                            <label>PDF</label>
+                            <input type="file" name="pdf" class="form-control" value="" maxlength="50" required="">
+                        </div>
+                        <input type="submit" class="btn btn-primary" name="save" value="submit">
+                        <a href="index.php" class="btn btn-default">Cancel</a>
+                    </form>
+                </div>
+
+            </div> 
+               
+        </div>
+</div>
+
+</div>
     </section> 
+    <script>
+   
+ var modal = document.getElementById("myModal");
+      
+
+      var btn = document.getElementById("addnew");
+      
+     
+      var span = document.getElementsByClassName("close")[0];
+     
+     
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+     radioselect1.onclick = function(){
+      divradio.style.display = "none"
+     }
+     radioselect2.onclick = function(){
+      divradio.style.display = "block"
+     }
+     
+    </script>
 </body>
 </html>
