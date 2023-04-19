@@ -129,7 +129,7 @@
                         <div class="contentbutton">
                             
                           <div class="add" style="width: 50%;">
-                          <input type="button" value="addnew"  id="addnew" class="btn btn-success pull-right">
+                          <input type="button" value="+ Nouveau fichier"  id="addnew" class="btn btn-success pull-right">
       </div>
       <div class="search" style="width: 50%;">
       <input type="text" class="input" name="search" placeholder="Search Client">
