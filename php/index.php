@@ -172,7 +172,7 @@
                     <div class="page-header">
                         <h2>Create Record</h2>
                     </div>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Please fill this form and submit to add the document record to the database.</p>
                     <form action="add_pdf.php" method="post">
                     <div class="form-group">
                             <label>PDF</label>
