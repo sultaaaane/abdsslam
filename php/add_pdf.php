@@ -1,36 +1,34 @@
-
 <?php
 
-// Create connection
-require('DB/connect.php');
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if form submitted
 if(isset($_POST['submit'])){
 
-    // Get file details
-    $filename = $_FILES['pdf']['name'];
-    $filetmpname = $_FILES['pdf']['tmp_name'];
-    $filesize = $_FILES['pdf']['size'];
-    $filetype = $_FILES['pdf']['type'];
+    $file = $_FILES['file'];
 
-    // Move file to server directory
-    move_uploaded_file($filetmpname, 'pdfs/'.$filename);
+    $filename = $_FILES['file']['name'];
+    $filetmpname = $_FILES['file']['tmp_name'];
+    $filesize = $_FILES['file']['size'];
+    $fileError = $_FILES['file']['error'];
+    $filetype = $_FILES['file']['type'];
 
-    // Insert file details into database
-    $sql = "INSERT INTO documents (filename, filepath) VALUES ('$filename', 'pdfs/$filename')";
+    $fileExt = explode('.', $filename);
+    $fileActualExt = strtolower(end($fileExt));
 
-    if ($conn->query($sql) === TRUE) {
-        echo "File uploaded successfully.";
-    } else {
-        echo "Error uploading file: " . $conn->error;
-    }
+    $allowed = array('pdf' , 'jpeg' , 'jpg' , 'png' ,'docx');
+
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($filesize < 1000000){
+                $fileNameNew = uniqid('', true).".".$fileActualExt;
+                $fileDestination = 'files/'.$fileNameNew;
+                move_uploaded_file($filetmpname, $fileDestination);
+                header("Location: index.php?uploadsuccess");
+            }else{
+                echo "Your file is too big!";
+            }
+        }else{
+            echo "There was an error uploading your file!";
+        }
+      }
 }
 
-// Close connection
-$conn->close();
 ?>

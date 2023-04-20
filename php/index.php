@@ -173,12 +173,12 @@
                         <h2>Create Record</h2>
                     </div>
                     <p>Please fill this form and submit to add the document record to the database.</p>
-                    <form action="add_pdf.php" method="post">
+                    <form action="add_pdf.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                             <label>PDF</label>
-                            <input type="file" name="pdf" class="form-control" value="" maxlength="50" required="">
+                            <input type="file" name="file" class="form-control" value="file" maxlength="50" required="">
                         </div>
-                        <input type="submit" class="btn btn-primary" name="save" value="submit">
+                        <input type="submit" class="btn btn-primary" name="submit" value="submit">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
