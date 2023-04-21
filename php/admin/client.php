@@ -70,7 +70,7 @@
                 <td>avenu mohammed 5 rabat</td>
               
                 
-                <td><a href="gererType.php?type_Pro=<?php echo $row["type_Pro"]; ?>"> Supprimer</a></td>
+                <td><a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Good Ware - Flaticon</a>Supprimer</a></td>
               </tr>
               <tr>
                 <td>Tax-Expert</td>
