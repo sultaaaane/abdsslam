@@ -55,15 +55,30 @@
            
                 <tr>
                     <th>Nom</th>
-                   
-                    <th>Action</th>
-                    <th>Action</th>
-                    <th>Action</th>
-                    <th>Action</th>
+                    <th>Gmail</th>
+                    <th>Ville</th>
+                    <th>N°Telephone</th>
+                    <th>Adresse</th>
+                    <th>Supprimer</th>
                 </tr>
               
               <tr>
-                <td>yyyyyy</td>
+                <td>Tax-Expert</td>
+                <td>tax@gmail.com</td>
+                <td>Rabat</td>
+                <td>0612345678</td>
+                <td>avenu mohammed 5 rabat</td>
+              
+                
+                <td><a href="gererType.php?type_Pro=<?php echo $row["type_Pro"]; ?>"> Supprimer</a></td>
+              </tr>
+              <tr>
+                <td>Tax-Expert</td>
+                <td>tax@gmail.com</td>
+                <td>Rabat</td>
+                <td>0612345678</td>
+                <td>avenu mohammed 5 rabat</td>
+                
                 
                 <td><a href="gererType.php?type_Pro=<?php echo $row["type_Pro"]; ?>"> Supprimer</a></td>
               </tr>
@@ -81,11 +96,19 @@
 /////////////
 -->
    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
     .content{
     position:absolute;
     width: 95%;
     height: 600px;
    right: 0;
+ 
 }
 .tab{
     width: 90%;
