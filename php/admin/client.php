@@ -70,7 +70,7 @@
                 <td>avenu mohammed 5 rabat</td>
               
                 
-                <td><a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Good Ware - Flaticon</a>Supprimer</a></td>
+                <td><img src="../../images/supprimer.png"></img></td>
               </tr>
               <tr>
                 <td>Tax-Expert</td>
@@ -101,6 +101,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+}
+img{
+    width: 30px;
+    height: 30px;
 }
 
     .content{
