@@ -7,6 +7,6 @@
     <title>Mes clients</title>
 </head>
 <body>
-    
+
 </body>
 </html>
