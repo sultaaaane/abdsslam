@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes clients</title>
-</head>
-<body>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +36,7 @@
    }
   }
   </script>
+  <section class="home-section">
     <div class="content">
         <div class="tab">
             <div class="search">
@@ -79,11 +72,17 @@
 
                  
         </div>
-    
+
+        </section>
+        
+    <!--Style de la page
+/////////////
+/////////////
+-->
    <style>
     .content{
     position:absolute;
-    width: 77%;
+    width: 95%;
     height: 600px;
    right: 0;
 }
@@ -258,7 +257,5 @@ tr:nth-child(even) {
     color: black;
 }
    </style>
-</body>
-</html>
 </body>
 </html>
