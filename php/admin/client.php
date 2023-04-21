@@ -35,8 +35,11 @@
             <table>
            
                 <tr>
-                    <th>Type</th>
+                    <th>Nom</th>
                    
+                    <th>Action</th>
+                    <th>Action</th>
+                    <th>Action</th>
                     <th>Action</th>
                 </tr>
               
