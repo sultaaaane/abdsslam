@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -16,90 +18,108 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
     <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="login.css">
-    <title>Login</title>
-</head>
-<section class="">
-<header  class="navbar navbar-expand-lg">
+    <link rel="stylesheet" href="style.css">
+<!--
+
+Finance Business TemplateMo
+
+https://templatemo.com/tm-545-finance-business
+
+-->
+  </head>
+  <body>
+  <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="one-page.html"><h2>TAX EXPERT</h2></a>
-        
+        <a class="navbar-brand" href="index.html"><h2>TAX EXPERT</h2></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+           
+         
       </div>
     </nav>
   </header>
-</section>
+  
+    
+ 
+<div class="form">
+      
+    <ul class="tab-group">
+      <li class="tab active"><a href="#signup">Sign Up</a></li>
+      <li class="tab"><a href="#login">Log In</a></li>
+    </ul>
+    
+    <div class="tab-content">
+      <div id="signup">   
+        <h1>Sign Up for Free</h1>
+        
+        <form action="/" method="post">
+        
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              First Name<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" />
+          </div>
+      
+          <div class="field-wrap">
+            <label>
+              Last Name<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+        </div>
 
-<section class="forms-section">
-    <div class="forms">
-      <div class="form-wrapper is-active">
-        <button type="button" class="switcher switcher-login">
-          Login
-          <span class="underline"></span>
-        </button>
-        <form class="form form-login" method="post" action="php/index.php">
-          <fieldset>
-            <legend>Please, enter your email and password for login.</legend>
-            <div class="input-block">
-              <label for="login-email">E-mail</label>
-              <input id="login-email" name="email" type="email" required>
-            </div>
-            <div class="input-block">
-              <label for="login-password">Password</label>
-              <input id="login-password" name="password" type="password" required>
-            </div>
-          </fieldset>
-          <button type="submit" name="submit" class="btn-login">Login</button>
+        <div class="field-wrap">
+          <label>
+            Email Address<span class="req">*</span>
+          </label>
+          <input type="email"required autocomplete="off"/>
+        </div>
+        
+        <div class="field-wrap">
+          <label>
+            Set A Password<span class="req">*</span>
+          </label>
+          <input type="password"required autocomplete="off"/>
+        </div>
+        
+        <button type="submit" class="button button-block">Get Started</button>
+        
         </form>
-      </div>
-      <div class="form-wrapper">
-        <button type="button" class="switcher switcher-signup">
-          Sign Up
-          <span class="underline"></span>
-        </button>
-        <form class="form form-signup" method="post" action="php/index.php">
-          <fieldset>
-            <legend>Please, enter your email, password and password confirmation for sign up.</legend>
-            <div class="input-block">
-              <div class="input-block">
-               
-                <label for="signup-password-confirm">nom</label>
-                <input id="signup-password-confirm" type="text" name="nom" required>
-              </div>
-              <label for="signup-email">E-mail</label>
-              <input id="signup-email" type="email" name="gmail" required>
-            </div>
-            <div class="input-block">
-              <label for="signup-password">ville</label>
-              <input id="signup-password" type="text" name="ville" required>
-            </div>
-            <div class="input-block">
-              <label for="signup-password-confirm">telephone</label>
-              <input id="signup-password-confirm" type="phone" name="telephone" required>
-            </div>
-            <div class="input-block">
-              <label for="signup-password-confirm">adresse</label>
-              <input id="signup-password-confirm" type="text" name="adresse" required>
-            </div>
-            <div class="input-block">
-              <label for="signup-password-confirm">password</label>
-              <input id="signup-password-confirm" type="password" name="password" required>
-            </div>
-          </fieldset>
-          <button type="submit" name="continue" class="btn-signup">Continue</button>
-        </form>
-      </div>
-    </div>
-    <script>const switchers = [...document.querySelectorAll('.switcher')]
 
-        switchers.forEach(item => {
-            item.addEventListener('click', function() {
-                switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-                this.parentElement.classList.add('is-active')
-            })
-        })</script>
-  </section>
+      </div>
+      
+      <div id="login">   
+        <h1>Welcome Back!</h1>
+        
+        <form action="/" method="post">
+        
+          <div class="field-wrap">
+          <label>
+            Email Address<span class="req">*</span>
+          </label>
+          <input type="email"required autocomplete="off"/>
+        </div>
+        
+        <div class="field-wrap">
+          <label>
+            Password<span class="req">*</span>
+          </label>
+          <input type="password"required autocomplete="off"/>
+        </div>
+        
+        <p class="forgot"><a href="#">Forgot Password?</a></p>
+        
+        <button class="button button-block"/>Log In</button>
+        
+        </form>
+
+      </div>
+      
+    </div><!-- tab-content -->
+    
+</div> <!-- /form -->
+</body>
