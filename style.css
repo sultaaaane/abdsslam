@@ -6,7 +6,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  background-color: #7E8955;
+  background-color: #343434;
   font-family: 'Titillium Web', sans-serif;
 }
 .navbar{
@@ -19,7 +19,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: rgb(60, 179, 113);;
+  color: #343434;
   transition: 0.5s ease;
 }
 a:hover {
@@ -67,7 +67,7 @@ a:hover {
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #7E8955;
+  background: #343434;
   color: #ffffff;
 }
 .tab-content > div:last-child {
@@ -75,7 +75,7 @@ a:hover {
 }
 h1 {
   text-align: center;
-  color: #7E8955;
+  color: #343434;
   font-weight: 300;
   margin: 0 0 40px;
 }
@@ -91,7 +91,7 @@ label {
 }
 label .req {
   margin: 2px;
-  color: rgb(60, 179, 113);
+  color: #343434;
 }
 label.active {
   transform: translateY(50px);
@@ -112,7 +112,7 @@ input, textarea {
   padding: 5px 10px;
   background: none;
   background-image: none;
-  border: 1px solid rgb(60, 179, 113);
+  border: 1px solid #343434;
   color: rgb(60, 179, 113);
   border-radius: 0;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
@@ -120,7 +120,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #7E8955;
+  border-color: #343434;
 }
 textarea {
   border: 2px solid #a0b3b0;
@@ -152,19 +152,19 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: rgb(60, 179, 113);;
+  background: #343434;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: rgb(60, 179, 113);
+  background: #343434;
 }
 .button-block {
   display: block;
   width: 100%;
   border-radius: 6px;
-  background-color: rgb(60, 179, 113);
+  background-color: #343434;
   cursor: pointer;
 }
 .forgot {
