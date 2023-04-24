@@ -1,6 +1,6 @@
 <?php
 include_once '../DB/connect.php';
-$sql = "DELETE FROM client WHERE id ='" . $_GET["refProduit"] . "'";
+$sql = "DELETE FROM client WHERE id ='" . $_GET["id"] . "'";
 if (mysqli_query($conn, $sql)) {
    header("location: client.php");
    exit();

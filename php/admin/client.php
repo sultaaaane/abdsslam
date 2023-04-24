@@ -78,7 +78,7 @@
                         <td><?php echo $row["ville"]; ?></td>
                         <td><?php echo $row["telephone"]; ?></td>
                         <td><?php echo $row["adresse"]; ?></td>
-                        <td><img src="../../images/delete.png" href="Pdelete.php?refProduit=<?php echo $row["id"]; ?>"></td>
+                        <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
                     </tr>
                     <?php
                     $i++;
