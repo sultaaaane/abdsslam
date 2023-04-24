@@ -19,11 +19,11 @@ body {
 }
 a {
   text-decoration: none;
-  color: #A4C639;
+  color: rgb(60, 179, 113);;
   transition: 0.5s ease;
 }
 a:hover {
-  color: #A4C639;
+  color: rgb(60, 179, 113);;
 }
 .form {
   background: #EEF5CE;
@@ -63,7 +63,7 @@ a:hover {
   transition: 0.5s ease;
 }
 .tab-group li a:hover {
-  background: #A4C639;
+  background: rgb(60, 179, 113);;
   color: #ffffff;
 }
 .tab-group .active a {
@@ -83,7 +83,7 @@ label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
-  color: #A4C639;
+  color: rgb(60, 179, 113);;
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
@@ -91,7 +91,7 @@ label {
 }
 label .req {
   margin: 2px;
-  color: #A4C639;
+  color: rgb(60, 179, 113);
 }
 label.active {
   transform: translateY(50px);
@@ -112,8 +112,8 @@ input, textarea {
   padding: 5px 10px;
   background: none;
   background-image: none;
-  border: 1px solid #A4C639;
-  color: #A4C639;
+  border: 1px solid rgb(60, 179, 113);
+  color: rgb(60, 179, 113);
   border-radius: 0;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
   border-radius: 6px;
@@ -152,19 +152,19 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: #A4C639;
+  background: rgb(60, 179, 113);;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #9dbd3a;
+  background: rgb(60, 179, 113);
 }
 .button-block {
   display: block;
   width: 100%;
   border-radius: 6px;
-  background-color: #A4C639;
+  background-color: rgb(60, 179, 113);
   cursor: pointer;
 }
 .forgot {
