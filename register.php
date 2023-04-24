@@ -2,7 +2,7 @@
      require('php/DB/connect.php');
      
      // Process the registration form
-     if (isset($_POST["submit"])) {
+     if (isset($_POST["save"])) {
          $username = $_POST['nom'];
          $email = $_POST['email'];
          $ville = $_POST['ville'];
@@ -11,7 +11,7 @@
          $password = $_POST['password'];
          // If there are no errors, insert the user into the database
      
-             $sql = "INSERT INTO client ( nom , email , ville , telephone , adresse , password) VALUES ('$username', '$email','$ville','$telephone','$adresse','$password')";
+             $sql = "INSERT INTO client ( nom , gmail , ville , telephone , adresse , password) VALUES ('$username', '$email','$ville','$telephone','$adresse','$password')";
      
              if (mysqli_query($conn, $sql)) {
 
