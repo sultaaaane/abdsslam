@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/gererType.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../style/sidebar.css">
+    
 </head>
 <body>
     
@@ -77,7 +78,7 @@
                         <td><?php echo $row["ville"]; ?></td>
                         <td><?php echo $row["telephone"]; ?></td>
                         <td><?php echo $row["adresse"]; ?></td>
-                        <td><img src="../../images/delete.png"> <a href="Pdelete.php?refProduit=<?php echo $row["id"]; ?>"></a> </td>
+                        <td><img src="../../images/delete.png" href="Pdelete.php?refProduit=<?php echo $row["id"]; ?>"></td>
                     </tr>
                     <?php
                     $i++;
