@@ -49,8 +49,14 @@
                  <div>
                     <input type="button" value="Nouveau type +" id="addpro">
                  </div>
-            </div>
-          
+            </div> <?php
+            include_once '../DB/connect.php';
+                    $result = mysqli_query($conn,"SELECT * FROM client");
+                    ?>
+
+                    <?php
+                    if (mysqli_num_rows($result) > 0) {
+                    ?>
             <table>
            
                 <tr>
@@ -61,26 +67,30 @@
                     <th>Adresse</th>
                     <th>Supprimer</th>
                 </tr>
-              
+                <?php
+                    $i=0;
+                    while($row = mysqli_fetch_array($result)) {
+                    ?>
               <tr>
-                <td>Tax-Expert</td>
-                <td>tax@gmail.com</td>
-                <td>Rabat</td>
-                <td>0612345678</td>
-                <td>avenu mohammed 5 rabat</td>
-              
-                
-                <td><img src="../../images/supprimer.png"></img></td>
-              </tr>
-              <tr>
-                <td>Tax-Expert</td>
-                <td>tax@gmail.com</td>
-                <td>Rabat</td>
-                <td>0612345678</td>
-                <td>avenu mohammed 5 rabat</td>
-                
-                
-                <td><a href="gererType.php?type_Pro=<?php echo $row["type_Pro"]; ?>"> Supprimer</a></td>
+                    <td><?php echo $row["nom"]; ?></td>
+                        <td><?php echo $row["gmail"]; ?></td>
+                        <td><?php echo $row["ville"]; ?></td>
+                        <td><?php echo $row["telephone"]; ?></td>
+                        <td><?php echo $row["adresse"]; ?></td>
+                        <td><img href="../../images/supprimer.png"> </td>
+                    </tr>
+                    <?php
+                    $i++;
+                    }
+                    ?>
+                    </table>
+
+                     <?php
+                    }
+                    else{
+                        echo "No result found";
+                    }
+                    ?>
               </tr>
              
                     
