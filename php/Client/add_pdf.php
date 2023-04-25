@@ -1,34 +1,41 @@
 <?php
+// Check if the form was submitted
+require('../DB/connect.php');
+if(isset($_POST["submit"])) {
+	// Check if a file was selected
+	if(isset($_FILES["file"])) {
+		// Get file information
+		$name = $_FILES["file"]["name"];
+		$type = $_FILES["file"]["type"];
+		$file = file_get_contents($_FILES["file"]["tmp_name"]);
+		
+		// Connect to the database
+		
+		
+		// Check if the connection was successful
+		if(!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		// Prepare the SQL statement
+		$sql = "INSERT INTO dossier (pdf,name, type,id_client) VALUES (?, ?, ?, ?)";
+		$stmt = mysqli_prepare($conn, $sql);
+		
+		// Bind the parameters
+		mysqli_stmt_bind_param($stmt, "ssss", $file, $name ,$type, $_COOKIE['id']);
 
-if(isset($_POST['submit'])){
-
-    $file = $_FILES['file'];
-
-    $filename = $_FILES['file']['name'];
-    $filetmpname = $_FILES['file']['tmp_name'];
-    $filesize = $_FILES['file']['size'];
-    $fileError = $_FILES['file']['error'];
-    $filetype = $_FILES['file']['type'];
-
-    $fileExt = explode('.', $filename);
-    $fileActualExt = strtolower(end($fileExt));
-
-    $allowed = array('pdf' , 'jpeg' , 'jpg' , 'png' ,'docx');
-
-    if(in_array($fileActualExt, $allowed)){
-        if($fileError === 0){
-            if($filesize < 1000000){
-                $fileNameNew = uniqid('', true).".".$fileActualExt;
-                $fileDestination = 'files/'.$fileNameNew;
-                move_uploaded_file($filetmpname, $fileDestination);
-                header("Location: index.php?uploadsuccess");
-            }else{
-                echo "Your file is too big!";
-            }
-        }else{
-            echo "There was an error uploading your file!";
-        }
-      }
+       
+		// Execute the statement
+		mysqli_stmt_execute($stmt);
+		
+		// Close the statement and the connection
+		mysqli_stmt_close($stmt);
+		mysqli_close($conn);
+		
+		echo "File uploaded successfully!";
+        header("Location: index.php");
+	} else {
+		echo "Please select a file to upload.";
+	}
 }
-
 ?>

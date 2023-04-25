@@ -160,6 +160,40 @@
         <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
           <div class="text">Activité enregistré</div>
         </div>
+        <?php
+require('../DB/connect.php');
+
+// Create a mysqli object
+$mysqli = new mysqli("localhost","root","","tax-expert");
+
+// Check the connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+    // Create the query
+$query = "SELECT * FROM dossier";
+
+// Execute the query
+$result = $mysqli->query($query);
+// Loop through the results
+while ($row = $result->fetch_assoc()) {
+    $file_name = $row['name'];
+    $file_data = $row['type'];
+    
+    // Output the file as a link
+    echo "<a href='data:application/octet-stream;base64," . base64_encode($file_data) . "' download='" . $file_name . "'>" . $file_name . "</a><br>";
+}
+
+// Free the result set
+$result->free();
+
+
+// Check if the query was successful
+if (!$result) {
+    die("Error: " . $mysqli->error);
+}
+
+?>
     </div>
   <!-- The Modal -->
 <div id="myModal" class="modal">

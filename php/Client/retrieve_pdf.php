@@ -1,16 +1,34 @@
 <?php
-// Retrieve the PDF from the database
-require('DB/connect.php');
-$stmt = mysqli_prepare($conn, "SELECT doc1 FROM documents WHERE id_doc = 1 ");
-mysqli_stmt_bind_param($stmt, "s", $_GET['pdf']);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $pdfContent);
-mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);
-mysqli_close($conn);
+require('../DB/connect.php');
 
-// Display the PDF in the browser
-header('Content-Type: application/pdf');
-header('Content-Disposition: inline; filename="' . $_GET['pdf'] . '"');
-echo stripslashes($pdfContent);
+// Create a mysqli object
+$mysqli = new mysqli($host, $username, $password, $database);
+
+// Check the connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+    // Create the query
+$query = "SELECT * FROM files";
+
+// Execute the query
+$result = $mysqli->query($query);
+// Loop through the results
+while ($row = $result->fetch_assoc()) {
+    $file_name = $row['file_name'];
+    $file_data = $row['file_data'];
+    
+    // Output the file as a link
+    echo "<a href='data:application/octet-stream;base64," . base64_encode($file_data) . "' download='" . $file_name . "'>" . $file_name . "</a><br>";
+}
+
+// Free the result set
+$result->free();
+
+
+// Check if the query was successful
+if (!$result) {
+    die("Error: " . $mysqli->error);
+}
+
 ?>
