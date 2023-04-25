@@ -140,27 +140,7 @@
       </form>
             
     </section>        
-      <section class="home-section"> 
-      <div class="grid">
-        <div class="card1">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
-        <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
-          <div class="text">Activité enregistré</div>
-        </div>
-        <div class="card2">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
-          <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
-          <div class="text">Activité enregistré</div>
-        </div>
-        <div class="card3">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>Cours POO</span></div></div>
-        <div class="img" > <img src="../images/images.jpeg" alt="" style="height: 100%; width: 100%;"></div>
-          <div class="text">Activité enregistré</div>
-        </div>
-        <?php
+    <?php
 require('../DB/connect.php');
 
 // Create a mysqli object
@@ -171,7 +151,7 @@ if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
     // Create the query
-$query = "SELECT * FROM dossier";
+$query = "SELECT * FROM dossier ";
 
 // Execute the query
 $result = $mysqli->query($query);
@@ -179,9 +159,20 @@ $result = $mysqli->query($query);
 while ($row = $result->fetch_assoc()) {
     $file_name = $row['name'];
     $file_data = $row['type'];
-    
+    $file = $row['pdf'];
     // Output the file as a link
-    echo "<a href='data:application/octet-stream;base64," . base64_encode($file_data) . "' download='" . $file_name . "'>" . $file_name . "</a><br>";
+ echo '
+      <section class="home-section"> 
+      <div class="grid">
+        <?php
+       
+        <div class="card1">
+        <div class="icone" style="margin: auto;">
+        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>'. $file_name . '</span></div></div>
+        <div class="img" ><iframe src="data:application/pdf;base64,"' . base64_encode($file) . '"></iframe> </div>
+          <div class="text">Activité enregistré</div>
+        </div> ';
+        
 }
 
 // Free the result set
@@ -192,8 +183,9 @@ $result->free();
 if (!$result) {
     die("Error: " . $mysqli->error);
 }
-
-?>
+          ?>
+        </div>
+        
     </div>
   <!-- The Modal -->
 <div id="myModal" class="modal">
