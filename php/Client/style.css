@@ -76,24 +76,24 @@ grid-template-areas:
 margin-top: 50px;
 }
 .card1{
-    grid-area: A;
+grid-area: A;
 border: 0;
 box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
- border-radius: 10%;
+ border-radius: 5px;
  background-color: #ebeef7;
 }
 .card2{
     grid-area: B;
 border: 0;
 box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
-border-radius: 10%;
+border-radius: 5px;
 background-color: #ebeef7;
 }
 .card3{
     grid-area: C;
 border: 0;
 box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
-border-radius: 10%;
+border-radius: 5px;
 background-color: #ebeef7;
 }
 .icone{

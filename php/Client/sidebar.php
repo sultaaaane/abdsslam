@@ -17,10 +17,13 @@
                 <div class="col-lg-12 mx-auto" >
                     <div class="page-header clearfix">
                     <div class="sidebar" style="background-color: rgb(60, 179, 113);">
+
+
     <div class="logo-details" >
         <div class="logo_name">Client</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
+
     <ul class="nav-list">
       <li>
        <a href="" id="client" >
@@ -76,6 +79,12 @@
      </li>
     </ul>
   </div>
+
+
+
+
+
+
   <script>
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");

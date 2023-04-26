@@ -159,6 +159,7 @@ table td{
     
     
 }
+/* SearchBox */
 .champ{
     width: 200px;
     height: 2rem;
@@ -178,6 +179,8 @@ table td{
     padding: 0px 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+
 table button{
     font-weight: 600;
     height: 100%;
@@ -191,6 +194,7 @@ table button:hover{
     color: white;
 
 }
+
 #btnsrch{
     height: 2rem;
     border: none;
@@ -202,11 +206,9 @@ table button:hover{
 
 
 select{
-   
-    
     font-size: 13px;
-   
 }
+
 #addpro{
     height: 2rem;
     width: 10rem;
@@ -214,6 +216,7 @@ select{
     border: none;
     border-radius: 10px;
    font-weight: 600;
+    transition : 0.2s ease-in-out;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #addpro:hover{

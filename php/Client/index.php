@@ -19,7 +19,7 @@
 .sidebar li a i{
     
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 800;
+    font-weight: 400;
     
   }
   .sidebar li a .links_name{
