@@ -65,18 +65,20 @@
 .grid{
     width: 100%;
     height: auto;
-    display: flex;
-    /* grid-template-columns: repeat(3, 1fr); */
-    /* grid-gap: 10px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
     padding : 10px 35px;
+    row-gap: 40px;
 }
 .card{
-width : 500px;
+width : auto;
 height: auto;
 margin: 0px 20px;
 box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
 border-radius: 5px;
 background-color: #ebeef7;
+cursor: pointer;
 /* margin-left: 300px; */
 }
 
