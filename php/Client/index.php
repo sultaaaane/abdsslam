@@ -202,7 +202,7 @@ if (!$result) {
 
 <!-- Modal content -->
 <div class="modal-content">
-  <span class="close">&times;</span>
+  <span class="close_1">&times;</span>
   <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -219,9 +219,7 @@ if (!$result) {
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
-
-            </div> 
-               
+            </div>   
         </div>
 </div>
 

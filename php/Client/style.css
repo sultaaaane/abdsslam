@@ -66,7 +66,7 @@
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   padding : 10px 35px;
   row-gap: 40px;
