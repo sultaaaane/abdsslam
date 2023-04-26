@@ -233,7 +233,7 @@ if (!$result) {
       var btn = document.getElementById("addnew");
       
      
-      var span = document.getElementsByClassName("close")[0];
+      var span = document.getElementsByClassName("close_1")[0];
      
      
       

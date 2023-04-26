@@ -188,6 +188,23 @@ border-radius: 10%;
 
 
 /* The Close Button */
+.close_1 {
+
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+
+
+.close_1:hover,
+.close_1:focus {
+color: red;
+text-decoration: none;
+cursor: pointer;
+}
 .close {
 
 align-self: center;
