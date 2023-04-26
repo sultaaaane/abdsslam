@@ -125,37 +125,83 @@ border-radius: 10%;
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
+    z-index: 999;
     left: 0;
     top: 0;
     width: 50%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-   
     margin: auto;
+    outline: none;
+    border-radius: 5px;
   }
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 10px;
     margin: auto;
-    padding: 20px;
+    height: 350px;
+    width : 300px;
+    padding: 20px 50px;
     border: 1px solid #888;
     width: 50%;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
   }
+
+  .form-group{
+   padding: 5px;
+   margin-bottom: 50px;
+
+  }
+  .form-control{
+   padding: 10px;
+  }
+
+  .btn-primary{
+    background-color: #298e46;
+    padding: 10px 20px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    border : 1px solid #298e46;
+    height: 45px;
+  }
+
+  .btn-default{
+    border : 1px solid #298e46;
+    padding: 10px 20px;
+    color : #298e46;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+
+
   
   /* The Close Button */
   .close {
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 30px;
+
     font-weight: bold;
+    transition: 0.2s ease-in-out;
+    padding: 5px;
+
   }
+
+  
   
   .close:hover,
   .close:focus {
-    color: #000;
+    color: red;
     text-decoration: none;
     cursor: pointer;
   }
