@@ -124,56 +124,57 @@
   }
   </script>
    <section class="home-section">
-                      
-                        
-                        <form method="post">
-                        <div class="contentbutton">
-                            
-                          <div class="add" style="width: 50%;">
-                          <input type="button" value="+ Nouveau fichier"  id="addnew" class="btn btn-success pull-right">
+      <form method="post">
+         <div class="contentbutton">
+           <div class="add" style="width: 50%;">
+           <input type="button" value="+ Nouveau fichier"  id="addnew" class="btn NewFolderButton">
       </div>
-      <div class="search" style="width: 50%;">
-      <input type="text" class="input" name="search" placeholder="Search Client">
-      <button type="submit" name="submit-s" class="button-3">Search</button>
-      </div>
+  
       </div>
       </form>
             
-    </section>       
-    <section class="home-section">  
-    <div class="grid">
-    <?php
-require('../DB/connect.php');
+    </section>    
+    
+    
 
+<section class="home-section">  
+    <div class="grid">
+      
+    <?php
+    require('../DB/connect.php');
 // Create a mysqli object
 $mysqli = new mysqli("localhost","root","","tax-expert");
-
 // Check the connection
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
     // Create the query
 $query = "SELECT * FROM dossier";
-
 // Execute the query
 $result = $mysqli->query($query);
-
 // Loop through the results
 while ($row = $result->fetch_assoc()) {
     $file_name = $row['name'];
     $file_data = $row['type'];
     $file = $row['pdf'];
-    
     // Output the file as a link
  echo '
-      
-        <div class="card">
-        <div class="icone" style="margin: auto;">
-        <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>'. $file_name . '</span></div></div>
-        <div class="img" >  <iframe src="data:application/pdf;base64,' . base64_encode($file) . '"></iframe> </div>
-          <div class="text">Activité enregistré</div>
-        
-        
+
+ <div class="card">
+ <div class="icone" style="margin: auto;">
+    <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;">
+      <img src="../../icones/pdfff.png" alt="#">
+    </div>
+    <div class="title" style="width: 60%; margin: auto;">
+    <span>'. $file_name . '</span></div>
+</div>
+
+ <div class="img" >
+    <iframe class="Iframe" src="data:application/pdf;base64,' . base64_encode($file) . '"></iframe>
+ </div>
+<div class="text">
+</div>
+</div>
          ';
         
 }

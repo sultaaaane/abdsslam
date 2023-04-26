@@ -63,39 +63,23 @@
     font-family: "Poppins", sans-serif;
 }
 .grid{
-    display: grid;
     width: 100%;
-    padding: 10px;
-grid-template: 260px 260px 1fr 1fr 260px/ 1fr 1fr 1fr ;
-grid-column-gap: 10px;
-grid-row-gap: 10px;
-gap: 20px;
-grid-template-areas:
- 
-"A B C";
-margin-top: 50px;
+    height: auto;
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-gap: 10px; */
+    padding : 10px 35px;
 }
-.card1{
-grid-area: A;
-border: 0;
-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
- border-radius: 5px;
- background-color: #ebeef7;
-}
-.card2{
-    grid-area: B;
-border: 0;
+.card{
+width : 500px;
+height: auto;
+margin: 0px 20px;
 box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
 border-radius: 5px;
 background-color: #ebeef7;
+/* margin-left: 300px; */
 }
-.card3{
-    grid-area: C;
-border: 0;
-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
-border-radius: 5px;
-background-color: #ebeef7;
-}
+
 .icone{
 width: 80%;
 display: flex;
@@ -105,15 +89,20 @@ border-radius: 10%;
 
 .img{
     width: 90%;
-    height: 60%;
+    height: 300px;
     margin: auto;
+}
+.img .Iframe{
+    width : 100%;
+    height: 100%;
+    margin-bottom: 25px;
 }
 .text{
     color: #b89090;
     text-align: center;
     padding: 10px 0px;
 }
-.card1:hover{
+.card:hover{
     background-color: #dbe3fc;
     cursor: pointer;
 }
@@ -129,9 +118,7 @@ border-radius: 10%;
     width: 100%;
     display: flex;
     height: 100px;
-   padding: 40px;
-   
-   
+   padding: 40px;  
 }
 
 /* The Modal (background) */
@@ -262,4 +249,21 @@ border-radius: 10%;
       font-size: 0.9rem;
       font-weight: 700;
       background-color: #f2f2f2;
+    }
+
+    .home-section .contentbutton .NewFolderButton{
+        padding : 10px;
+        outline: none;
+        border : 1px solid #3CB371;
+        border-radius: 4px;
+        background-color: transparent;
+        background-color :#3CB371;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+
+    .home-section .contentbutton .NewFolderButton:hover{
+       background-color: transparent;
+       color : #3CB371
     }
