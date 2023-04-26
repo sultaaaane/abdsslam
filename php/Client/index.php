@@ -170,10 +170,10 @@ while ($row = $result->fetch_assoc()) {
     <img src="../../icones/pdfff.png" alt="#">
   </div>
     <div class="title" style="width: 60%; margin: auto;">
-    <span>'. $file_name . '</span></div> '
-    ?>
+    <span>'. $file_name . '</span></div> 
+   
     <span class="close">&times;</span>
-    <?php echo '
+  
     </div>
 </div>
 
