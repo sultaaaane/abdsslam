@@ -157,18 +157,17 @@ $query = "SELECT * FROM dossier";
 
 // Execute the query
 $result = $mysqli->query($query);
-$i = 0;
+
 // Loop through the results
 while ($row = $result->fetch_assoc()) {
     $file_name = $row['name'];
     $file_data = $row['type'];
     $file = $row['pdf'];
-    $i=$i+1;
     
     // Output the file as a link
  echo '
       
-        <div class="card'.$i.'">
+        <div class="card">
         <div class="icone" style="margin: auto;">
         <div class="imgdiv" style="width: 20%; text-align: center; margin: auto;" ><img src="../../icones/pdfff.png" alt="#"></div><div class="title" style="width: 60%; margin: auto;"><span>'. $file_name . '</span></div></div>
         <div class="img" >  <iframe src="data:application/pdf;base64,' . base64_encode($file) . '"></iframe> </div>
