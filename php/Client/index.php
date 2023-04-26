@@ -9,6 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../vendor/cdnjs/sweetalert.min.js">
 <title></title>
 <style>
   #client{
@@ -27,6 +28,7 @@
   }
 </style>
     <script type="text/javascript">
+    
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
         });
@@ -100,6 +102,7 @@
   </div>-->
   <?php include 'sidebar.php';?>
   <script>
+
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
   let searchBtn = document.querySelector(".bx-search");
@@ -216,7 +219,7 @@ if (!$result) {
                             <input type="file" name="file" class="form-control" value="file" maxlength="50" required="">
                         </div>
                         <input type="submit" class="btn btn-primary" name="submit" value="submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                       
                     </form>
                 </div>
             </div>   
@@ -229,14 +232,17 @@ if (!$result) {
    
  var modal = document.getElementById("myModal");
       
-
+var btndelete = document.getElementsByClassName("close")
       var btn = document.getElementById("addnew");
       
      
       var span = document.getElementsByClassName("close_1")[0];
+      var can = document.getElementById("cancel");
      
      
-      
+      btndelete.onclick = function(){
+       alert("ddddddd");
+      }
       // When the user clicks the button, open the modal 
       btn.onclick = function() {
         modal.style.display = "block";
@@ -252,6 +258,9 @@ if (!$result) {
      radioselect2.onclick = function(){
       divradio.style.display = "block"
      }
+can.onclick = function(){
+  modal.style.display = "none"
+}
      
     </script>
     
