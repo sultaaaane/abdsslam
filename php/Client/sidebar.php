@@ -28,55 +28,18 @@
       <li>
        <a href="" id="client" >
          <i class='bx bx-user' ></i>
-         <span class="links_name">Client</span>
+         <span class="links_name">Mes fichiers</span>
        </a>
        <span class="tooltip">Client</span>
      </li>
      <li>
        <a href="../Lcommande/Lindex.php">
          <i class='bx bx-chat' ></i>
-         <span class="links_name">Ligne Commande</span>
+         <span class="links_name" >Contactez-nous</span>
        </a>
        <span class="tooltip">Ligne Commande</span>
      </li>
-     <li>
-       <a href="../produit/Pindex.php" >
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Produit</span>
-       </a>
-       <span class="tooltip">Produit</span>
-     </li>    
-      <li>
-       <a href="../commande/Cindex.php">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Commande</span>
-       </a>
-       <span class="tooltip">Commande</span>
-     </li>
-     <li>
-       <a href="../archive/Aindex.php">
-         <i class='bx bx-folder' ></i>
-         <span class="links_name">Archive</span>
-       </a>
-       <span class="tooltip">Archive</span>
-     </li>
-     <li>
-       <a href="../password/Psindex.php">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-     <li class="profile">
-         <div class="profile-details">
-           <!--<img src="profile.jpg" alt="profileImg">-->
-           <div class="name_job">
-             <div class="name">abdessamad - Mohammed</div>
-             <div class="job">Admin</div>
-           </div>
-         </div>
-         <a href="../log-in.html"><i class='bx bx-log-out' id="log_out" ></i></a>
-     </li>
+    
     </ul>
   </div>
 
