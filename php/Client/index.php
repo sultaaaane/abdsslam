@@ -256,7 +256,21 @@ var btndelete = document.getElementById("close");
      
      
        function fct(){
-        Swal.fire("Our First Alert");
+        Swal.fire({
+  title: 'Voulez vous vraiment supprimer ce pdf?',
+  showDenyButton: true,
+  
+  confirmButtonText: 'Supprimer',
+  denyButtonText: `Annuler`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+
+    Swal.fire('Bien supprimer!', '', 'success')
+  } else if (result.isDenied) {
+   
+  }
+})
       }
       // When the user clicks the button, open the modal 
       btn.onclick = function() {
