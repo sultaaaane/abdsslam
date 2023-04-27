@@ -156,7 +156,7 @@ if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
     // Create the query
-$query = "SELECT * FROM dossier where $_COOKIE[id]";
+$query = "SELECT * FROM dossier where id_client = $_COOKIE[id]  ";
 // Execute the query
 $result = $mysqli->query($query);
 // Loop through the results
