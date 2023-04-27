@@ -5,27 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript" src="sweetalert.min.js"></script>
+    
+
 </head>
 <body>
-    <div class="card">  
-        <div class="icone" style="margin: auto;">
-           </div>
-           <div  class="title" style="width: 60%; margin: auto;">
-            <div class="container_icone" style="border : 1px solid black"> 
-                <div class="imgdiv" style="width: 20%; text-align: center; margin: auto; ">
-            <img src="../../icones/pdfff.png"  alt="#"  style=" left : 100%;">
-           <span>'. $file_name . '</span>
-           <span class="close">&times;</span>
-        </div>
-       </div>
-     </div>
-    </div>
- </div>
-        <div class="img" >
-           <iframe class="Iframe" src="data:application/pdf;base64,' . base64_encode($file) . '"></iframe>
-        </div>
-       <div class="text">
-       </div>
-       </div>
+    <button id="btn" onclick="fct()">hehehehe</button>
+   
+    <script>
+        swal({
+     title: "Confirmation!",
+     text: "Bien Confirmer!!",
+     icon: "success",
+     button: "Ok",
+     timer: 5000
+ })
+     </script>
 </body>
 </html>
