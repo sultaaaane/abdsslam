@@ -10,13 +10,9 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
 
-
-    <script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
-"></script>
-<link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
-" rel="stylesheet">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
 
 <title></title>
@@ -165,6 +161,7 @@ $query = "SELECT * FROM dossier where $_COOKIE[id]";
 $result = $mysqli->query($query);
 // Loop through the results
 while ($row = $result->fetch_assoc()) {
+    $file_id = $row['id'];
     $file_name = $row['name'];
     $file_data = $row['type'];
     $file = $row['pdf'];
@@ -182,7 +179,7 @@ while ($row = $result->fetch_assoc()) {
     <span>'. $file_name . '</span></div> 
 
 
-    <span onclick="fct()" class="close" id="close">&times;</span>
+    <span onclick="fct()" class="close" id="close" value="'<?php echo $file_id; ?>'">&times;</span>
 
   
 
@@ -265,8 +262,29 @@ var btndelete = document.getElementById("close");
 }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
   if (result.isConfirmed) {
+   
+                // AJAX request to PHP file
+                $.ajax({
+                    type: "POST",
+                    url: "delete.php",
+                    data: {
+                        // data to be sent to PHP file, if any
+                     data : $file_id
 
-    Swal.fire('Bien supprimer!', '', 'success')
+                    },
+                    success: function(response) {
+                        // handle response from PHP file
+                    }
+                });
+                swal("Deleted!", {
+                    icon: "success",
+                });
+           
+            
+       
+    
+
+    
   } else if (result.isDenied) {
    
   }
