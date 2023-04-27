@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../style/sidebar.css">
     <title>Document</title>
 </head>
 <body>
+<?php include 'sidebar.php';?>
+  <script>
+
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
 <?php
-           include 'php/DB/connect.php';
+           include '../DB/connect.php';
           
-            if(isset($_POST["fore"]))
+            if(isset($_POST["form"]))
             {
                 $nom = $_POST["nom"];
                 $ville =$_POST["ville"];
@@ -19,7 +47,7 @@
                 $msg = $_POST["message"];
                 $fore = $_POST["form"]; 
             $sql = "INSERT INTO messages (nom,email,ville,tele,message) VALUES('$nom','$ville','$email','$tele','$msg')";
-            if(mysqli_query($con, $sql)){
+            if(mysqli_query($conn, $sql)){
                 ?>
                 <script>
                 swal({
@@ -47,13 +75,13 @@
                     <li>Via notre formulaire de contact sur notre site web</li>
                 </ul>
             </div>
-            <form action="contact.phpsa"  method="POST">
+            <form action="contact.php"  method="POST">
                 <input type="text" class="champs" name="nom" placeholder="Nom" required>
                 <input type="text" class="champs" name="ville" placeholder="ville" required>
                 <input type="text" class="champs" name="mail" placeholder="Email" required>
                 <input type="text" class="champs" name="tele" placeholder="Telephone" required>
                 <textarea name="message" id="input" class="champs" style="height: 200px;" cols="30" rows="10" placeholder="Message"  required></textarea>
-                <input type="submit" name="form" class="submitbtn" value="Envoyez">
+                <input type="submit" name="submit" class="submitbtn" value="submit">
             </form>
            
         </div>
@@ -64,7 +92,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
-*{
+        *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -104,21 +132,7 @@ nav .menu{
     justify-content: end;
     align-items: center;
 }
-ul li{
-    display: inline-block;
-    padding: 10px 5px;
-}
-li a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 0.9rem;
-    transition: 0.3s ease-in-out;
-}
-li a:hover{
-    color: #E7BD70;
-    text-shadow: 3px 3px black;
-}
+
 
 .text {
     display: flex;
