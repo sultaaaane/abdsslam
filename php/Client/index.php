@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
-     <link rel="stylesheet" href="../vendor/cdnjs/sweetalert.min.js">
+     <link rel="stylesheet" href="../../vendor/cdnjs/sweetalert.min.js">
 <title></title>
 <style>
   #client{
@@ -170,10 +170,10 @@ while ($row = $result->fetch_assoc()) {
     <img src="../../icones/pdfff.png" alt="#">
   </div>
     <div class="title" style="width: 60%; margin: auto;">
-    <span>'. $file_name . '</span></div> '
-    ?>
-    <span class="close">&times;</span>
-    <?php echo '
+    <span>'. $file_name . '</span></div> 
+
+    <span onclick="fct()" class="close" id="close">&times;</span>
+
     </div>
 </div>
 
@@ -184,7 +184,7 @@ while ($row = $result->fetch_assoc()) {
 </div>
 </div>
          ';
-        
+
 }
 
 // Free the result set
@@ -196,6 +196,7 @@ if (!$result) {
     die("Error: " . $mysqli->error);
 }
           ?>
+
           
           </section> 
           </div>
@@ -234,7 +235,7 @@ if (!$result) {
    
  var modal = document.getElementById("myModal");
       
-var btndelete = document.getElementsByClassName("close");
+var btndelete = document.getElementById("close");
       var btn = document.getElementById("addnew");
       
      
@@ -242,8 +243,14 @@ var btndelete = document.getElementsByClassName("close");
       var can = document.getElementById("cancel");
      
      
-      btndelete.onclick = function(){
-       alert("ddddddd");
+       function fct(){
+        swal({
+            title: "Demmande!",
+            text: "Vous avez déja demmander cette propriété!!",
+            icon: "error",
+            button: "Ok",
+            timer: 5000
+        })
       }
       // When the user clicks the button, open the modal 
       btn.onclick = function() {
