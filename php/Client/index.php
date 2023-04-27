@@ -172,7 +172,13 @@ while ($row = $result->fetch_assoc()) {
     <div class="title" style="width: 60%; margin: auto;">
     <span>'. $file_name . '</span></div> 
 
+
     <span onclick="fct()" class="close" id="close">&times;</span>
+
+
+   
+    <span class="close">&times;</span>
+  
 
     </div>
 </div>
