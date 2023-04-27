@@ -179,7 +179,7 @@ while ($row = $result->fetch_assoc()) {
     <span>'. $file_name . '</span></div> 
 
 
-    <span onclick="fct()" class="close" id="close" value="'<?php echo $file_id; ?>'">&times;</span>
+    <span onclick="fct()" class="close" id="close" value="' .$file_id .'">&times;</span>
 
   
 
@@ -250,7 +250,7 @@ var btndelete = document.getElementById("close");
      
       var span = document.getElementsByClassName("close_1")[0];
       var can = document.getElementById("cancel");
-     
+    
      
        function fct(){
         Swal.fire({
@@ -262,25 +262,25 @@ var btndelete = document.getElementById("close");
 }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
   if (result.isConfirmed) {
-   
+    var fileId = document.getElementById("close").getAttribute("value");
                 // AJAX request to PHP file
                 $.ajax({
                     type: "POST",
-                    url: "delete.php",
+                    url: "delete_pdf.php",
                     data: {
                         // data to be sent to PHP file, if any
-                     data : $file_id
+                     data : fileId
 
                     },
                     success: function(response) {
                         // handle response from PHP file
                     }
                 });
-                swal("Deleted!", {
+                swal.fire("Deleted!", {
                     icon: "success",
                 });
            
-            
+                location.reload();
        
     
 

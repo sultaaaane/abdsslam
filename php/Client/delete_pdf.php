@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $sql = "DELETE FROM dossier WHERE id = $id ";
 
 if (mysqli_query($conn, $sql)) {
+
    header("location: index.php");
    exit();
 } else {
