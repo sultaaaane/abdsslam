@@ -6,7 +6,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  background-color: #343434;
+  background-color: rgb(60, 179, 113);
   font-family: 'Titillium Web', sans-serif;
 }
 .navbar{
@@ -23,13 +23,13 @@ a {
   transition: 0.5s ease;
 }
 a:hover {
-  color: rgb(60, 179, 113);;
+  color: rgb(60, 179, 113);
 }
 .form {
-  background: #EEF5CE;
+  background: rgb(237, 238, 242);
 
   padding: 40px;
-  max-width: 600px;
+  max-width: 50%;
   margin: 40px auto;
   border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -83,7 +83,7 @@ label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
-  color: rgb(60, 179, 113);;
+  color: rgb(60, 179, 113);
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
@@ -166,8 +166,44 @@ textarea {
   border-radius: 6px;
   background-color: #343434;
   cursor: pointer;
+  font-size: 25px;
+}
+.button-block:hover{
+  background-color: rgb(60, 179, 113);
 }
 .forgot {
   margin-top: -20px;
   text-align: right;
+}
+.inp{
+  border: none;
+  background-color: white;
+  border-radius: 5%;
+
+}
+.inp::placeholder{
+  font-size: 18px;
+}
+.upin{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+}
+.navbar .navbar-brand2 {
+	float: 	left;
+	margin-top: 12px;
+	outline: none;
+}
+.navbar .navbar-brand2 h2 {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: 700;
+	-webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+.navbar .navbar-brand2 h2 em {
+	font-style: normal;
+	font-size: 16px;
 }
