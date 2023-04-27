@@ -9,7 +9,16 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
-     <script src="../../vendor/cdnjs/sweetalert.min.js"></script>
+
+
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+" rel="stylesheet">
+
+
 <title></title>
 <style>
   #client{
@@ -247,13 +256,7 @@ var btndelete = document.getElementById("close");
      
      
        function fct(){
-        swal({
-            title: "Demmande!",
-            text: "Vous avez déja demmander cette propriété!!",
-            icon: "error",
-            button: "Ok",
-            timer: 5000
-        })
+        Swal.fire("Our First Alert");
       }
       // When the user clicks the button, open the modal 
       btn.onclick = function() {
