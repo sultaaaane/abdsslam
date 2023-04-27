@@ -33,7 +33,7 @@
        <span class="tooltip">Client</span>
      </li>
      <li>
-       <a href="../Lcommande/Lindex.php">
+       <a href="../../contact.php">
          <i class='bx bx-chat' ></i>
          <span class="links_name" >Contactez-nous</span>
        </a>
