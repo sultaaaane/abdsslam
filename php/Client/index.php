@@ -151,7 +151,7 @@ if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
     // Create the query
-$query = "SELECT * FROM dossier";
+$query = "SELECT * FROM dossier where $_COOKIE[id]";
 // Execute the query
 $result = $mysqli->query($query);
 // Loop through the results
@@ -175,9 +175,6 @@ while ($row = $result->fetch_assoc()) {
 
     <span onclick="fct()" class="close" id="close">&times;</span>
 
-
-   
-    <span class="close">&times;</span>
   
 
     </div>
