@@ -62,7 +62,9 @@
             }
         }
             ?>
-<section id="contact" style="padding-top: 10vh;padding-bottom: 10vh;">
+            
+<section id="contact" class="home-section">
+<div class="row">
         <div class="form" id="contact-col">
             <div class="contact-info">
                 <h1 style="text-align:center;">Contact</h1>
@@ -88,11 +90,14 @@
         <div class="map" id="contact-col">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13350.280986763686!2d-8.494937769233093!3d33.22536109342131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda91e1d173ae243%3A0x4fa699b9874f3eab!2sFacult%C3%A9%20des%20Sciences%20el%20Jadida!5e0!3m2!1sfr!2sma!4v1673600687100!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        </div>
     </section>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
         *{
+          
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -301,10 +306,12 @@ h3{
 
 /*   contact   */
 #contact{
+    border: 1px solid black;
   background-color: rgb(60, 179, 113);
     color: white;
     display: flex;
     height: 100%;
+    width: 100%;
 }
 #contact a:link{
     text-decoration: none;
@@ -533,6 +540,10 @@ footer{
         padding: 10px 15px;
     }
     .row{
+        border: 1px solid black;
+        height: 100%;
+        width: 100%;
+        display: block;
         flex-direction: column;
     }
     .text{
