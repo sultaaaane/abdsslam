@@ -171,7 +171,7 @@ while ($row = $result->fetch_assoc()) {
  <div class="card">
  <div class="icone" style="margin: auto;">
 
-     <div class="container-icon" style="display:flex;justify-content:space-between; width:100%">
+     <div class="container-icon" style="display:flex;justify-content:space-between; width:100%;">
     <div class="imgdiv" style="width: 20%; text-align: center;">
     <img src="../../icones/pdfff.png" alt="#">
   </div>

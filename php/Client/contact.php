@@ -41,7 +41,7 @@
             if(isset($_POST["form"]))
             {
                 $nom = $_POST["nom"];
-                $ville =$_POST["ville"];
+                $ville =$_POST["ville"]; 
                 $email = $_POST["mail"];
                 $tele = $_POST["tele"];
                 $msg = $_POST["message"];
@@ -64,7 +64,7 @@
             ?>
             
 <section id="contact" class="home-section">
-<div class="row">
+<div class="row_">
         <div class="form" id="contact-col">
             <div class="contact-info">
                 <h1 style="text-align:center;">Contact</h1>
@@ -88,7 +88,7 @@
            
         </div>
         <div class="map" id="contact-col">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13350.280986763686!2d-8.494937769233093!3d33.22536109342131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda91e1d173ae243%3A0x4fa699b9874f3eab!2sFacult%C3%A9%20des%20Sciences%20el%20Jadida!5e0!3m2!1sfr!2sma!4v1673600687100!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe id="TheFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13350.280986763686!2d-8.494937769233093!3d33.22536109342131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda91e1d173ae243%3A0x4fa699b9874f3eab!2sFacult%C3%A9%20des%20Sciences%20el%20Jadida!5e0!3m2!1sfr!2sma!4v1673600687100!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         </div>
     </section>
@@ -275,15 +275,17 @@ nav .menu{
     margin: auto;
   }
   
-.row{
+.row_{
     padding-top: 20px;
     gap: 20px;
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     margin: auto;
+    background-color: rgb(60, 179, 113);
+    border-radius : 8px;
 }
-.row .col{
+.row_ .col{
     background-color:  #292929;
     border-radius: 10px;
     border-color: #E7BD70;
@@ -306,12 +308,14 @@ h3{
 
 /*   contact   */
 #contact{
-    border: 1px solid black;
-  background-color: rgb(60, 179, 113);
     color: white;
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+    padding : 40px 20px;
 }
 #contact a:link{
     text-decoration: none;
@@ -320,6 +324,11 @@ h3{
 }
 #contact-col{
     flex-basis: 50%;
+}
+
+#contact-col #TheFrame{
+    border-radius : 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .contact-info{
     text-align: center;
@@ -539,7 +548,7 @@ footer{
         display: block;
         padding: 10px 15px;
     }
-    .row{
+    .row_{
         border: 1px solid black;
         height: 100%;
         width: 100%;
@@ -580,10 +589,6 @@ footer{
     }
 }
 
-
-
-
-
-    </style>
+</style>
 </body>
 </html>
