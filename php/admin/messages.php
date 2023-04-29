@@ -52,7 +52,7 @@
                  </div>
             </div> <?php
             include_once '../DB/connect.php';
-                    $result = mysqli_query($conn,"SELECT * FROM dossier");
+                    $result = mysqli_query($conn,"SELECT * FROM messages");
                     ?>
 
                     <?php
@@ -61,21 +61,23 @@
             <table>
            
                 <tr>
-                    <th>the pdf</th>
-                    <th>Client</th>
-                    <th>Supprimer</th>
-                    <th></th>
+                    <th>Nom</th>
+                    <th>Gmail</th>
+                    <th>Ville</th>
+                    <th>N°Telephone</th>
+                    <th>Message</th>
                 </tr>
                 <?php
                     $i=0;
                     while($row = mysqli_fetch_array($result)) {
-                        $pdf_blob = $row['pdf'];
-                        $pdf_url = "data:application/pdf;base64," . base64_encode($pdf_blob);
                     ?>
               <tr>
-                        <td><a href="<?php echo $pdf_url; ?>" target="_blank"><?php echo $row["name"]; ?></a></td>
-                        <td><?php echo $row["id_client"]; ?></td>
-                        <td><a href="delete_pdf.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
+                    <td><?php echo $row["nom"]; ?></td>
+                        <td><?php echo $row["email"]; ?></td>
+                        <td><?php echo $row["ville"]; ?></td>
+                        <td><?php echo $row["tele"]; ?></td>
+                        <td><?php echo $row["message"]; ?></td>
+                        
                     </tr>
                     <?php
                     $i++;

@@ -29,20 +29,22 @@
        </a>
        <span class="tooltip">Client</span>
      </li>
+    
      <li>
-       <a href="" >
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Produit</span>
-       </a>
-       <span class="tooltip">Produit</span>
-     </li>    
-     <li>
-       <a href="client_pdf.php">
+       <a href="messages.php">
          <i class='bx bx-chat' ></i>
          <span class="links_name">Ligne Commande</span>
        </a>
        <span class="tooltip">Ligne Commande</span>
      </li>
+     <li>
+       <a href="client_pdf.php" >
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Produit</span>
+       </a>
+       <span class="tooltip">Produit</span>
+     </li>    
+     
      
       <li>
        <a href="">
