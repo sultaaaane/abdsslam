@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../style/sidebar.css">
+    <script src="../sweetalert.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -38,21 +39,20 @@
 <?php
            include '../DB/connect.php';
           
-            if(isset($_POST["form"]))
+            if(isset($_POST["submit"]))
             {
                 $nom = $_POST["nom"];
                 $ville =$_POST["ville"]; 
                 $email = $_POST["mail"];
                 $tele = $_POST["tele"];
                 $msg = $_POST["message"];
-                $fore = $_POST["form"]; 
             $sql = "INSERT INTO messages (nom,email,ville,tele,message) VALUES('$nom','$ville','$email','$tele','$msg')";
             if(mysqli_query($conn, $sql)){
                 ?>
                 <script>
-                swal({
-                    title: "Demmande!",
-                    text: "Vous avez déja demmander cette propriété!!",
+                swal.fire({
+                    title: "Reussit",
+                    text: "Le message a été bien transferé",
                     icon: "error",
                     button: "Ok",
                     timer: 5000
