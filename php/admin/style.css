@@ -1,0 +1,342 @@
+
+
+@media (max-width: 420px) {
+  .sidebar li .tooltip {
+      display: none;
+  }
+}
+.button-3 {
+  appearance: none;
+  background-color: #302ea4;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #111054;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.grid{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding : 10px 35px;
+  row-gap: 40px;
+}
+.card{
+width : auto;
+height: auto;
+margin: 0px 20px;
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+border-radius: 5px;
+background-color: #ebeef7;
+cursor: pointer;
+/* margin-left: 300px; */
+}
+
+.icone{
+width: 80%;
+display: flex;
+height: 50px;
+border-radius: 10%;
+}
+
+.img{
+  width: 90%;
+  height: 300px;
+  margin: auto;
+}
+.img .Iframe{
+  width : 100%;
+  height: 100%;
+  margin-bottom: 25px;
+}
+.text{
+  color: #b89090;
+  text-align: center;
+  padding: 10px 0px;
+}
+.card:hover{
+  background-color: #dbe3fc;
+  cursor: pointer;
+}
+.card2:hover{
+  background-color: #dbe3fc;
+  cursor: pointer;
+}
+.card3:hover{
+  background-color: #dbe3fc;
+  cursor: pointer;
+}
+.contentbutton{
+  width: 100%;
+  display: flex;
+  height: 100px;
+ padding: 40px;  
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  padding-top: 100px; /* Location of the box */
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 70%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  margin: auto;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* Modal Content */
+.modal-content {
+  outline: none;
+  border: none;
+  background-color: white;
+  padding: 10px;
+  margin: auto;
+  height: 350px;
+  width : 300px;
+  padding: 20px 50px;
+  border: 1px solid #888;
+  width: 50%;
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+}
+
+.form-group{
+ padding: 5px;
+ margin-bottom: 50px;
+
+}
+.form-control{
+ padding: 10px;
+}
+
+.btn-primary{
+  background-color: #298e46;
+  padding: 10px 20px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  border : 1px solid #298e46;
+  height: 45px;
+}
+
+.btn-default{
+  border : 1px solid #298e46;
+  padding: 10px 20px;
+  color : #298e46;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+
+
+/* The Close Button */
+.close_1 {
+
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+
+
+.close_1:hover,
+.close_1:focus {
+color: red;
+text-decoration: none;
+cursor: pointer;
+}
+.close {
+
+align-self: center;
+  color: #aaaaaa;
+  font-size: 30px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  padding: 5px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}
+
+
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+.inputes{
+  display: flex;
+  margin-bottom: 40px;
+}
+.inputes div{
+  width: 50%;
+  margin-left: 50px;
+}
+.submitbtn{
+
+      color: white;
+      background-color: rgb(224, 169, 107);
+      font-weight: 700;
+      height: 40px;
+      border: 0.8px rgb(223, 189, 189) solid;
+      width: 40%;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      margin-top: 20px;
+      
+  
+}
+.champs{
+  width: 80%;
+  box-sizing: border-box;
+  height: 2.1rem;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  background-color: rgba(224, 196, 196, 0.121);
+}
+.inputes label{
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.divbtn{
+  width: 100%;
+  text-align: center;
+  ;
+}
+form{
+  margin-top: 25px;
+}
+.inputes ::placeholder{
+  color: rgba(121, 129, 134, 0.747);
+  font-weight: 500;
+  font-size: 14px;
+}
+#btnsrch:hover{
+  cursor: pointer;
+  background-color: rgb(224, 169, 107);
+  color: white;
+}
+#a2{
+  background-color:antiquewhite;
+  color: black;
+}
+
+.inputes .fil{
+  width: 33%;
+  margin-left: 50px;
+}
+.cham{ width: 87%;
+  box-sizing: border-box;
+  height: 2.1rem;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  background-color: rgba(224, 196, 196, 0.121);}
+
+  #adresse{
+    margin-bottom: 26px;
+    box-sizing: border-box;
+    border-top: 2rem;
+    border-bottom: 1rem;
+    height: 3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: #f2f2f2;
+  }
+
+  .home-section .contentbutton .NewFolderButton{
+      padding : 10px;
+      outline: none;
+      border : 1px solid #3CB371;
+      border-radius: 4px;
+      background-color: transparent;
+      background-color :#3CB371;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+  }
+
+  .home-section .contentbutton .NewFolderButton:hover{
+     background-color: transparent;
+     color : #3CB371
+  }
+.imgdiv{
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+}

@@ -88,8 +88,7 @@
            
         </div>
         <div class="map" id="contact-col">
-            <iframe id="TheFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13350.280986763686!2d-8.494937769233093!3d33.22536109342131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda91e1d173ae243%3A0x4fa699b9874f3eab!2sFacult%C3%A9%20des%20Sciences%20el%20Jadida!5e0!3m2!1sfr!2sma!4v1673600687100!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1643.8676952590977!2d-6.830341486056151!3d34.02383121758745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDAxJzI2LjEiTiA2wrA0OSc0Ny45Ilc!5e0!3m2!1sen!2sma!4v1682869577333!5m2!1sen!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
         </div>
     </section>
     

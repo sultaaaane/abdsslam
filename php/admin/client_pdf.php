@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerer le types</title>
-    <link rel="stylesheet" href="css/gererType.css">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../style/sidebar.css">
     
@@ -48,7 +48,7 @@
                  </div>
                 
                  <div>
-                    <input type="button" value="Nouveau type +" id="addpro">
+                 <input type="button" value="+ Nouveau fichier"  id="addnew" class="btn NewFolderButton">
                  </div>
             </div> <?php
             include_once '../DB/connect.php';
@@ -69,12 +69,15 @@
                 <?php
                     $i=0;
                     while($row = mysqli_fetch_array($result)) {
+                        $row2 = mysqli_query($conn,"SELECT nom FROM client where id = ". $row['id_client']." ");
+                        $row3 = mysqli_fetch_array($row2);
+
                         $pdf_blob = $row['pdf'];
                         $pdf_url = "data:application/pdf;base64," . base64_encode($pdf_blob);
                     ?>
               <tr>
                         <td><a href="<?php echo $pdf_url; ?>" target="_blank"><?php echo $row["name"]; ?></a></td>
-                        <td><?php echo $row["id_client"]; ?></td>
+                        <td><?php echo $row3['nom']; ?></td>
                         <td><a href="delete_pdf.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
                     </tr>
                     <?php
@@ -96,12 +99,110 @@
 
                  
         </div>
+        <div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close_1">&times;</span>
+  <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h2>Create Record</h2>
+                    </div>
+                    <p>Please fill this form and submit to add the document record to the database.</p>
+                    <form action="add_pdf.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                            <label>PDF</label>
+                            <input type="file" name="file" class="form-control" value="file" maxlength="50" required="">
+                        </div>
+                        <input type="submit" class="btn btn-primary" name="submit" value="submit">
+                       
+                    </form>
+                </div>
+            </div>   
+        </div>
+</div>
+
+</div>
 
         </section>
+        <script>
+   
+ var modal = document.getElementById("myModal");
+      
+var btndelete = document.getElementById("close");
+      var btn = document.getElementById("addnew");
+      
+     
+      var span = document.getElementsByClassName("close_1")[0];
+      var can = document.getElementById("cancel");
+    
+     
+       function fct(){
+        Swal.fire({
+  title: 'Voulez vous vraiment supprimer ce pdf?',
+  showDenyButton: true,
+  
+  confirmButtonText: 'Supprimer',
+  denyButtonText: `Annuler`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    var fileId = document.getElementById("close").getAttribute("value");
+                // AJAX request to PHP file
+                $.ajax({
+                    type: "POST",
+                    url: "delete_pdf.php",
+                    data: {
+                        // data to be sent to PHP file, if any
+                     data : fileId
+
+                    },
+                    success: function(response) {
+                        // handle response from PHP file
+                    }
+                });
+                swal.fire("Deleted!", {
+                    icon: "success",
+                });
+           
+                location.reload();
+       
+    
+
+    
+  } else if (result.isDenied) {
+   
+  }
+})
+      }
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+     radioselect1.onclick = function(){
+      divradio.style.display = "none"
+     }
+     radioselect2.onclick = function(){
+      divradio.style.display = "block"
+     }
+can.onclick = function(){
+  modal.style.display = "none"
+}
+     
+    </script>
         
     <!--Style de la page
 /////////////
 /////////////
+
+
 -->
    <style>
     * {
