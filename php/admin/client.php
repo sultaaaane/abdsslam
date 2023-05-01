@@ -80,7 +80,9 @@
                         <td><?php echo $row["telephone"]; ?></td>
                         <td><?php echo $row["adresse"]; ?></td>
                         <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
-                        <td><a href="add_pdf.php?id=<?php echo $row["id"]; ?>"> <img src="../../icones/addfile.png" ></a> </td>
+                        <form action="add_pdf.php" method="post">
+                        <td><input type="file" name="file" class="form-control" value="file" maxlength="50" required=""></td>
+                        </form>
                     </tr>
                     <?php
                     $i++;
