@@ -67,6 +67,7 @@
                     <th>N°Telephone</th>
                     <th>Adresse</th>
                     <th>Supprimer</th>
+                    <th>Ajouter un fichier</th>
                 </tr>
                 <?php
                     $i=0;
@@ -79,6 +80,7 @@
                         <td><?php echo $row["telephone"]; ?></td>
                         <td><?php echo $row["adresse"]; ?></td>
                         <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
+                        <td><a href="add_pdf.php?id=<?php echo $row["id"]; ?>"> <img src="../../icones/addfile.png" ></a> </td>
                     </tr>
                     <?php
                     $i++;

@@ -79,6 +79,7 @@
                         <td><a href="<?php echo $pdf_url; ?>" target="_blank"><?php echo $row["name"]; ?></a></td>
                         <td><?php echo $row3['nom']; ?></td>
                         <td><a href="delete_pdf.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
+                       
                     </tr>
                     <?php
                     $i++;
