@@ -117,6 +117,17 @@
                             <input type="file" name="file" class="form-control" value="file" maxlength="50" required="">
                         </div>
                         <input type="submit" class="btn btn-primary" name="submit" value="submit">
+                        <select name="client" id="client">
+                        <?php
+                         include_once '../DB/connect.php';
+                         $result = mysqli_query($conn,"SELECT * FROM client");
+                         if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo "<option value='" . $row["id"] . "'>" . $row["nom"] . "</option>";
+                            }
+                        }
+                         ?>
+                        </select>
                        
                     </form>
                 </div>

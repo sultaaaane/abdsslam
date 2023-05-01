@@ -66,6 +66,7 @@
                     <th>Ville</th>
                     <th>N°Telephone</th>
                     <th>Message</th>
+                    <th>Delete</th>
                 </tr>
                 <?php
                     $i=0;
@@ -77,7 +78,7 @@
                         <td><?php echo $row["ville"]; ?></td>
                         <td><?php echo $row["tele"]; ?></td>
                         <td><?php echo $row["message"]; ?></td>
-                        
+                        <td><a href="delete_message.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
                     </tr>
                     <?php
                     $i++;

@@ -1,9 +1,9 @@
 <?php
 // Check if the form was submitted
 require('../DB/connect.php');
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if(isset($_POST['fileId'])) {
 
-	$id = $_POST['data'];
+	$id = $_POST['fileId'];
 
 $sql = "DELETE FROM dossier WHERE id = $id ";
 

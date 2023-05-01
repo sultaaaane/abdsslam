@@ -30,15 +30,15 @@
            
              $sql = "INSERT INTO client ( nom , gmail , ville , telephone , adresse , password) VALUES ('$username', '$email','$ville','$telephone','$adresse','$password')";
      
-             $user_id = mysqli_insert_id($conn);
-
-             // Store the user ID and favorite color in the session
-             session_start();
-             $_SESSION['id'] = $user_id;
-             setcookie("id", $user_id);
+             
      
              if (mysqli_query($conn, $sql)) {
+                $user_id = mysqli_insert_id($conn);
 
+                // Store the user ID and favorite color in the session
+                session_start();
+                $_SESSION['id'] = $user_id;
+                setcookie("id", $user_id);
                  header('Location: php/Client/index.php');
                  
              } else {

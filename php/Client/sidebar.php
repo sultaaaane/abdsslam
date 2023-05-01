@@ -41,7 +41,13 @@
                 </a>
                 <span class="tooltip">Ligne Commande</span>
               </li>
+              <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
 
+         </div>
+         <a href="../../login.html"><i class='bx bx-log-out' id="log_out" ></i></a>
+     </li>
             </ul>
           </div>
 
