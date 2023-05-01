@@ -1,7 +1,6 @@
 <?php
 // Check if the form was submitted
 require('../DB/connect.php');
-if(isset($_POST["submit"])) {
 	// Check if a file was selected
 	if(isset($_FILES["file"])) {
 		// Get file information
@@ -22,7 +21,7 @@ if(isset($_POST["submit"])) {
 		$stmt = mysqli_prepare($conn, $sql);
 		
 		// Bind the parameters
-		mysqli_stmt_bind_param($stmt, "ssss", $file, $name ,$type, $_COOKIE['id']);
+		mysqli_stmt_bind_param($stmt, "ssss", $file, $name ,$type, $_GET["id"]);
 
        
 		// Execute the statement
@@ -37,5 +36,5 @@ if(isset($_POST["submit"])) {
 	} else {
 		echo "Please select a file to upload.";
 	}
-}
+
 ?>
