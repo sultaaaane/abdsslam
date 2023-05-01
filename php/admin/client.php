@@ -67,7 +67,8 @@
                     <th>N°Telephone</th>
                     <th>Adresse</th>
                     <th>Supprimer</th>
-                    <th>Ajouter un fichier</th>
+                    <th>Choisir un fichier</th>
+                    <th>Ajouter le fichier</th>
                 </tr>
                 <?php
                     $i=0;
@@ -82,6 +83,7 @@
                         <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
                         <form action="add_pdf.php" method="post">
                         <td><input type="file" name="file" class="form-control" value="file" maxlength="50" required=""></td>
+                        <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../icones/add-button.png" > </a> </td>
                         </form>
                     </tr>
                     <?php
