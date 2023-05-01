@@ -355,15 +355,14 @@ form{
     border-top: 2rem;
     border-bottom: 1rem;
     height: 2.5rem;
-    background: rgba(243, 240, 240, 0.082);
+    background: rgba(243, 240, 240, 0.3);
     border: none;
     outline: none;
     border-bottom: 1px solid white;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
-  
-    box-shadow: 3px 2px 5px 2px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
 
