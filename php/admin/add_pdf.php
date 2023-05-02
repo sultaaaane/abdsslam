@@ -4,6 +4,7 @@ require('../DB/connect.php');
 	// Check if a file was selected
 	if(isset($_FILES["file"])) {
 		// Get file information
+		$id = $_POST["id"];
 		$name = $_FILES["file"]["name"];
 		$type = $_FILES["file"]["type"];
 		$file = file_get_contents($_FILES["file"]["tmp_name"]);
@@ -21,7 +22,7 @@ require('../DB/connect.php');
 		$stmt = mysqli_prepare($conn, $sql);
 		
 		// Bind the parameters
-		mysqli_stmt_bind_param($stmt, "ssss", $file, $name ,$type, $_GET["id"]);
+		mysqli_stmt_bind_param($stmt, "ssss", $file, $name ,$type, $id);
 
        
 		// Execute the statement
@@ -32,7 +33,7 @@ require('../DB/connect.php');
 		mysqli_close($conn);
 		
 		echo "File uploaded successfully!";
-        header("Location: index.php");
+        header("Location: client.php");
 	} else {
 		echo "Please select a file to upload.";
 	}

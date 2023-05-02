@@ -81,9 +81,10 @@
                         <td><?php echo $row["telephone"]; ?></td>
                         <td><?php echo $row["adresse"]; ?></td>
                         <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
-                        <form action="add_pdf.php" method="post">
-                        <td><input type="file" name="file" class="form-control" value="file" maxlength="50" required=""></td>
-                        <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../icones/add-button.png" > </a> </td>
+                        <form action="add_pdf.php" enctype="multipart/form-data" method="post">
+                        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+                        <td><input type="file" name="file" class="form-control" value="file" maxlength="50" required="" ></td>
+                        <td><input type="submit" value="ajouter"></input> </td>
                         </form>
                     </tr>
                     <?php
