@@ -12,7 +12,7 @@
     
 </head>
 <body>
-    
+
 <?php include 'sidebar.php';?>
   <script>
   let sidebar = document.querySelector(".sidebar");
@@ -52,6 +52,7 @@
                  </div>
             </div> <?php
             include_once '../DB/connect.php';
+            
                     $result = mysqli_query($conn,"SELECT * FROM dossier");
                     ?>
 
@@ -73,10 +74,13 @@
                         $row3 = mysqli_fetch_array($row2);
 
                         $pdf_blob = $row['pdf'];
+                        $pdf_filename = $row['name'];
                         $pdf_url = "data:application/pdf;base64," . base64_encode($pdf_blob);
+                        
+
                     ?>
               <tr>
-                        <td><a href="<?php echo $pdf_url; ?>" target="_blank"><?php echo $row["name"]; ?></a></td>
+                        <td><a href="retrieve_pdf.php?id=<?php echo $row["id"]; ?>"><?php echo $row["name"]; ?></a></td>
                         <td><?php echo $row3['nom']; ?></td>
                         <td><a href="delete_pdf.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
                        
