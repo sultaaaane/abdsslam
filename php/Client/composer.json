@@ -1,0 +1,24 @@
+{
+    "name": "moham/client",
+    "autoload": {
+        "psr-4": {
+            "Moham\\Client\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sultaaaane",
+            "email": "mohammed_bentahiralaoui@um5.ac.ma"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/minio/minio-php"
+        }
+    ],
+    "require": {
+        "minio/minio": "dev-master"
+    }
+    
+}
