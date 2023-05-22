@@ -125,17 +125,14 @@ border-radius: 10%;
 
 /* The Modal (background) */
 .modal {
-  position: relative; /* Stay in place */
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  padding-top: 100px; /* Location of the box */
+  position: relative;
+  display: none;
+  padding-top: 100px;
   z-index: 999;
-  left: 0;
-  right: 1000px;
   top: 0;
-  width: 70%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 70%;
+  height: 100%;
+  overflow: auto;
   margin: auto;
   outline: none;
   border-radius: 5px;
@@ -144,39 +141,43 @@ border-radius: 10%;
 /* Modal Content */
 .modal-content {
   outline: none;
-  border: none;
   background-color: white;
-  padding: 10px;
-  margin: auto;
-  height: 350px;
-  width : 300px;
   padding: 20px 50px;
+  margin: auto;
+  max-height: 80vh;
+  width: 300px;
   border: 1px solid #888;
-  width: 50%;
-  border: none;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
+  overflow-y: auto;
+  display: flex; /* Add flexbox display */
+  flex-direction: column; /* Align items in a column */
+  gap: 10px; /* Add some vertical spacing between items */
 }
 
-.form-group{
- padding: 5px;
- margin-bottom: 50px;
-
-}
-.form-control{
- padding: 10px;
+.form-group {
+  display: flex; /* Add flexbox display */
+  flex-direction: column; /* Align items in a column */
 }
 
-.btn-primary{
+.form-control {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.btn-primary {
   background-color: #298e46;
   padding: 10px 20px;
   color: white;
   outline: none;
   border: none;
   border-radius: 5px;
-  border : 1px solid #298e46;
   height: 45px;
+  width: 100%;
 }
+
+
+
 
 .btn-default{
   border : 1px solid #298e46;

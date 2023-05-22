@@ -6,7 +6,7 @@ require('../DB/connect.php');
 		// Get file information
 		$id = $_POST["id"];
 		$name = $_FILES["file"]["name"];
-		$type = $_FILES["file"]["type"];
+		$type = pathinfo($name, PATHINFO_EXTENSION);
 		$file = file_get_contents($_FILES["file"]["tmp_name"]);
 		
 		// Connect to the database

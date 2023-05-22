@@ -48,7 +48,7 @@
                  </div>
                 
                  <div>
-                    <input type="button" value="Nouveau type +" id="addpro">
+                    <input type="button" value="+ Nouveau fichier" id="addnew">
                  </div>
             </div> <?php
             include_once '../DB/connect.php';
@@ -83,7 +83,7 @@
                         <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
                         <form action="add_pdf.php" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
-                        <td><input type="file" name="file" class="form-control" value="file" maxlength="50" required="" ></td>
+                        <td><input type="file" name="file"  value="file" maxlength="50" required="" ></td>
                         <td><input type="submit" value="ajouter"></input> </td>
                         </form>
                     </tr>
@@ -107,7 +107,109 @@
                  
         </div>
 
+        <div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close_1">&times;</span>
+  <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h2>Create Record</h2>
+                    </div>
+                    <p>Please fill this form and submit to add the document record to the database.</p>
+                    <form action="add_client.php" method="post" >
+                    <div class="form-group">
+                            <label>Client</label>
+                            <label>nom</label><input type="text" name="nom"   required="">
+                            <label>email</label><input type="email" name="email"   required="">
+                            <label>ville</label><input type="text" name="ville"   required="">
+                            <label>telephone</label><input type="text" name="telephone"   required="">
+                            <label>adresse</label><input type="text" name="adresse"   required="">
+                            <label>mot de passe</label><input type="password" name="password"   required="">
+                        </div>
+                        <input type="submit" class="btn btn-primary" name="submit" value="submit">
+                       
+                    </form>
+                </div>
+            </div>   
+        </div>
+</div>
+
+</div>
+
         </section>
+
+        <script>
+   
+ var modal = document.getElementById("myModal");
+      
+var btndelete = document.getElementById("close");
+      var btn = document.getElementById("addnew");
+      
+     
+      var span = document.getElementsByClassName("close_1")[0];
+      var can = document.getElementById("cancel");
+     
+       function fct(fileId){
+        Swal.fire({
+  title: 'Voulez vous vraiment supprimer ce pdf?',
+  showDenyButton: true,
+  
+  confirmButtonText: 'Supprimer',
+  denyButtonText: `Annuler`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    
+                // AJAX request to PHP file
+                $.ajax({
+                    type: "POST",
+                    url: "delete_pdf.php",
+                    data: {
+                        // data to be sent to PHP file, if any
+                     fileId : fileId
+
+                    },
+                    success: function(response) {
+                        // handle response from PHP file
+                    }
+                });
+                swal.fire("Deleted!", {
+                    icon: "success",
+                });
+           
+                location.reload();
+       
+    
+
+    
+  } else if (result.isDenied) {
+   
+  }
+})
+      }
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+     radioselect1.onclick = function(){
+      divradio.style.display = "none"
+     }
+     radioselect2.onclick = function(){
+      divradio.style.display = "block"
+     }
+can.onclick = function(){
+  modal.style.display = "none"
+}
+     
+    </script>
         
     <!--Style de la page
 /////////////
@@ -216,7 +318,7 @@ select{
     font-size: 13px;
 }
 
-#addpro{
+#addnew{
     height: 2rem;
     width: 10rem;
     cursor: pointer;
@@ -226,7 +328,7 @@ select{
     transition : 0.2s ease-in-out;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-#addpro:hover{
+#addnew:hover{
     background-color: rgb(60,179,113);
     color: white;
 }
@@ -305,6 +407,9 @@ tr:nth-child(even) {
     background-color:antiquewhite;
     color: black;
 }
+
+
+
    </style>
 </body>
 </html>

@@ -105,6 +105,7 @@
      </li>
     </ul>
   </div>-->
+  
   <?php include 'sidebar.php';?>
   <script>
 
@@ -148,6 +149,7 @@
     <div class="grid">
       
     <?php
+    
 require('../DB/connect.php');
 
 // Create a mysqli object
@@ -159,7 +161,7 @@ if ($mysqli->connect_error) {
 }
 
 // Define the directory within the document root to store the files
-$directory = 'C:\xampp\htdocs\abdsslam\php\Client\pdfs';
+$directory = '../pdfs/';
 
 // Create the directory if it doesn't exist
 if (!is_dir($directory)) {
@@ -180,7 +182,7 @@ while ($row = $result->fetch_assoc()) {
     $file_blob = $row['pdf'];
 
     // Generate a unique filename for the temporary file
-    $filename = time() . '_' . uniqid() . '.pdf';
+    $filename = time() . '_' . uniqid() . $file_name;
 
     // Construct the file path relative to the document root
     $filePath = $directory . '/' . $filename;
@@ -188,7 +190,7 @@ while ($row = $result->fetch_assoc()) {
     // Save the BLOB data to the file
     file_put_contents($filePath, $file_blob);
 
-    // Output the file as a link with PDF.js viewer iframe
+    // Output the file as a link for download
     echo '
         <div class="card">
             <div class="icone" style="margin: auto;">
@@ -197,17 +199,14 @@ while ($row = $result->fetch_assoc()) {
                         <img src="../../icones/pdfff.png" alt="#">
                     </div>
                     <div class="title" style="width: 60%; margin: auto;">
-                        <span>' . $file_name . '</span>
+                        <a href="' . $filePath . '" download>' . $file_name . '</a>
                     </div> 
                     <span onclick="fct(' . $file_id . ')" class="close" id="close">&times;</span>
                 </div>
             </div>
-            <div class="img">
-                <iframe class="Iframe" src="http://localhost/' . $filePath . '"></iframe>
-            </div>
+            
             <div class="text"></div>
         </div>';
-
 }
 
 // Free the result set
@@ -221,6 +220,9 @@ if (!$result) {
 // Close the database connection
 $mysqli->close();
 ?>
+
+
+
 
 
 
