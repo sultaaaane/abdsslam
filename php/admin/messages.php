@@ -39,66 +39,90 @@
   }
   </script>
   <section class="home-section">
-    <div class="content">
-        <div class="tab">
-            <div class="search">
-                <div>
-                 <input type="button" id="btnsrch" value="Rechercher">
-                 <input type="text" class="champ" placeholder="Saisir le nom..">
-                 </div>
-                
-                 <div>
-                    <input type="button" value="Nouveau type +" id="addpro">
-                 </div>
-            </div> <?php
-            include_once '../DB/connect.php';
-                    $result = mysqli_query($conn,"SELECT * FROM messages");
-                    ?>
-
-                    <?php
-                    if (mysqli_num_rows($result) > 0) {
-                    ?>
-            <table>
-           
-                <tr>
-                    <th>Nom</th>
-                    <th>Gmail</th>
-                    <th>Ville</th>
-                    <th>N°Telephone</th>
-                    <th>Message</th>
-                    <th>Delete</th>
-                </tr>
-                <?php
-                    $i=0;
-                    while($row = mysqli_fetch_array($result)) {
-                    ?>
-              <tr>
-                    <td><?php echo $row["nom"]; ?></td>
-                        <td><?php echo $row["email"]; ?></td>
-                        <td><?php echo $row["ville"]; ?></td>
-                        <td><?php echo $row["tele"]; ?></td>
-                        <td><?php echo $row["message"]; ?></td>
-                        <td><a href="delete_message.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
-                    </tr>
-                    <?php
-                    $i++;
-                    }
-                    ?>
-                    </table>
-
-                     <?php
-                    }
-                    else{
-                        echo "No result found";
-                    }
-                    ?>
-              </tr>
-             
-                    
-            </table>
-
-                 
+  <div class="content">
+    <div class="tab">
+        <div class="search">
+            <div>
+                <select id="searchOption" class="champ">
+                    <option value="nom">Nom</option>
+                    <option value="ville">Ville</option>
+                    <option value="email">Email</option>
+                    <option value="tele">N°Telephone</option>
+                    <option value="message">Message</option>
+                </select>
+                <input type="button" id="btnsrch" value="Rechercher">
+                <input type="text" class="champ" id="searchInput" placeholder="Saisir le nom..">
+            </div>
+            
         </div>
+        
+        <?php
+        include_once '../DB/connect.php';
+
+        // Check if a search query is provided
+        $searchQuery = isset($_GET['query']) ? $_GET['query'] : '';
+
+        // Check if a search option is provided
+        $searchOption = isset($_GET['option']) ? $_GET['option'] : 'nom';
+
+        // Modify the SQL query to include the search condition based on the selected option
+        $query = "SELECT * FROM messages";
+        if (!empty($searchQuery)) {
+            $query .= " WHERE $searchOption LIKE '%$searchQuery%'";
+        }
+
+        $result = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+        ?>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Ville</th>
+                <th>Email</th>
+                <th>N°Telephone</th>
+                <th>Message</th>
+                <th>Delete</th>
+            </tr>
+            <?php
+            $i = 0;
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+                <tr>
+                    <td><?php echo $row["nom"]; ?></td>
+                    <td><?php echo $row["ville"]; ?></td>
+                    <td><?php echo $row["email"]; ?></td> 
+                    <td><?php echo $row["tele"]; ?></td>
+                    <td><?php echo $row["message"]; ?></td>
+                    <td>
+                        <a href="delete_message.php?id=<?php echo $row["id"]; ?>">
+                            <img src="../../images/delete.png">
+                        </a>
+                    </td>
+                </tr>
+            <?php
+                $i++;
+            }
+            ?>
+        </table>
+        <?php
+        } else {
+            echo "No result found";
+        }
+        ?>
+    </div>
+</div>
+
+<script>
+    // JavaScript function to handle the search button click event
+    document.getElementById("btnsrch").addEventListener("click", function() {
+        var searchOption = document.getElementById("searchOption").value;
+        var searchInput = document.getElementById("searchInput").value;
+        window.location.href = "messages.php?option=" + searchOption + "&query=" + searchInput;
+    });
+</script>
+
+
 
         </section>
         

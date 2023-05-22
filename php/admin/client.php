@@ -38,28 +38,47 @@
    }
   }
   </script>
-  <section class="home-section">
+ <section class="home-section">
     <div class="content">
         <div class="tab">
             <div class="search">
                 <div>
-                 <input type="button" id="btnsrch" value="Rechercher">
-                 <input type="text" class="champ" placeholder="Saisir le nom..">
-                 </div>
+                    <select id="searchOption" class="champ">
+                        <option value="nom">Nom</option>
+                        <option value="gmail">Gmail</option>
+                        <option value="ville">Ville</option>
+                        <option value="telephone">N°Telephone</option>
+                        <option value="adresse">Adresse</option>
+                    </select>
+                    <input type="button" id="btnsrch" value="Rechercher">
+                    <input type="text" class="champ" id="searchInput" placeholder="Saisir le nom..">
+                </div>
                 
-                 <div>
+                <div>
                     <input type="button" value="+ Nouveau fichier" id="addnew">
-                 </div>
-            </div> <?php
+                </div>
+            </div>
+            
+            <?php
             include_once '../DB/connect.php';
-                    $result = mysqli_query($conn,"SELECT * FROM client");
-                    ?>
 
-                    <?php
-                    if (mysqli_num_rows($result) > 0) {
-                    ?>
+            // Check if a search query is provided
+            $searchQuery = isset($_GET['query']) ? $_GET['query'] : '';
+
+            // Check if a search option is provided
+            $searchOption = isset($_GET['option']) ? $_GET['option'] : 'nom';
+
+            // Modify the SQL query to include the search condition based on the selected option
+            $query = "SELECT * FROM client";
+            if (!empty($searchQuery)) {
+                $query .= " WHERE $searchOption LIKE '%$searchQuery%'";
+            }
+
+            $result = mysqli_query($conn, $query);
+
+            if (mysqli_num_rows($result) > 0) {
+            ?>
             <table>
-           
                 <tr>
                     <th>Nom</th>
                     <th>Gmail</th>
@@ -71,41 +90,49 @@
                     <th>Ajouter le fichier</th>
                 </tr>
                 <?php
-                    $i=0;
-                    while($row = mysqli_fetch_array($result)) {
-                    ?>
-              <tr>
-                    <td><?php echo $row["nom"]; ?></td>
+                $i = 0;
+                while ($row = mysqli_fetch_array($result)) {
+                ?>
+                    <tr>
+                        <td><?php echo $row["nom"]; ?></td>
                         <td><?php echo $row["gmail"]; ?></td>
                         <td><?php echo $row["ville"]; ?></td>
                         <td><?php echo $row["telephone"]; ?></td>
                         <td><?php echo $row["adresse"]; ?></td>
-                        <td><a href="delete.php?id=<?php echo $row["id"]; ?>"> <img src="../../images/delete.png" > </a> </td>
+                        <td>
+                            <a href="delete.php?id=<?php echo $row["id"]; ?>">
+                                <img src="../../images/delete.png">
+                            </a>
+                        </td>
                         <form action="add_pdf.php" enctype="multipart/form-data" method="post">
-                        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
-                        <td><input type="file" name="file"  value="file" maxlength="50" required="" ></td>
-                        <td><input type="submit" value="ajouter"></input> </td>
+                            <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+                            <td><input type="file" name="file" value="file" maxlength="50" required=""></td>
+                            <td><input type="submit" value="ajouter"></td>
                         </form>
                     </tr>
-                    <?php
+                <?php
                     $i++;
-                    }
-                    ?>
-                    </table>
-
-                     <?php
-                    }
-                    else{
-                        echo "No result found";
-                    }
-                    ?>
-              </tr>
-             
-                    
+                }
+                ?>
             </table>
-
-                 
+            <?php
+            } else {
+                echo "No result found";
+            }
+            ?>
         </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript function to handle the search button click event
+    document.getElementById("btnsrch").addEventListener("click", function() {
+        var searchOption = document.getElementById("searchOption").value;
+        var searchInput = document.getElementById("searchInput").value;
+        window.location.href = "client.php?option=" + searchOption + "&query=" + searchInput;
+    });
+</script>
+
 
         <div id="myModal" class="modal">
 
