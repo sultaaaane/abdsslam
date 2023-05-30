@@ -106,7 +106,7 @@
                         </td>
                         <form action="add_pdf.php" enctype="multipart/form-data" method="post">
                             <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
-                            <td><input type="file" name="file" value="file" maxlength="50" required=""></td>
+                            <td><input type="file" name="file[]" value="file" maxlength="50" required=""  multiple></td>
                             <td><input type="submit" value="ajouter"></td>
                         </form>
                     </tr>

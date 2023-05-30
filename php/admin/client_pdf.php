@@ -47,10 +47,9 @@
                  <input type="text" class="champ" placeholder="Saisir le nom..">
                  </div>
                 
-                 <div>
-                 <input type="button" value="+ Nouveau fichier"  id="addnew" class="btn NewFolderButton">
-                 </div>
-            </div> <?php
+                 
+            </div> 
+            <?php
             include_once '../DB/connect.php';
             
                     $result = mysqli_query($conn,"SELECT * FROM dossier");
