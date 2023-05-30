@@ -661,6 +661,14 @@ strong {
   color: var(--white-color);
 }
 
+#custom {
+display: flex;
+transform: translateY(10px);
+}
+
+
+
+
 .services-icon-wrap {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-small);
@@ -669,7 +677,7 @@ strong {
   right: 0;
   width: 50%;
   height: 55%;
-  transform: rotate(-35deg) translateY(55px);
+  transform: rotate(-35deg) translateY(135px);
   transition: all ease 0.5s;
 }
 
@@ -1116,6 +1124,15 @@ strong {
   .projects .col-lg-4:last-child {
     margin-bottom: 0;
   }
+  #custom{
+    transform: translateX(-50%);
+  }
+
+  #custom2{
+    transform: translateX(-50%);
+  }
+
+
 
   .projects-thumb {
     margin-top: 0;
